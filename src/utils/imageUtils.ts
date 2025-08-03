@@ -38,33 +38,69 @@ export const getProductImages = (product: Product): string[] => {
   if (!folderName) return [];
 
   const basePath = `${MOCKUPS_BASE_PATH}/${folderName}`;
+  const imagePrefix = getImagePrefix(product);
   
-  // Define image patterns based on the observed file structure
-  const imagePatterns = [
-    // Front views (prioritize .jpeg over .jpg)
-    `Front,Black, Person 1, ${getImagePrefix(product)}.jpeg`,
-    `Front,Black, Person 1, ${getImagePrefix(product)}.jpg`,
-    `Front,Black, Person 2, ${getImagePrefix(product)}.jpeg`, 
-    `Front,Black, Person 2, ${getImagePrefix(product)}.jpg`,
-    `Front, Black ${getImagePrefix(product)}.jpeg`,
-    `Front, Black ${getImagePrefix(product)}.jpg`,
-    
-    // Back views
-    `Back, Black, Person 1, ${getImagePrefix(product)}.jpg`,
-    `Back, Black, Person 2, ${getImagePrefix(product)}.jpg`,
-    `Back, Black ${getImagePrefix(product)}.jpeg`,
-    `Back, Black ${getImagePrefix(product)}.jpg`,
-    
-    // Person wearing (back views)
-    `Person Back, Black ${getImagePrefix(product)}.jpeg`,
-    `Person Back, Black ${getImagePrefix(product)}.jpg`,
-  ];
+  // Generate all possible image patterns based on observed folder structure
+  // Excluding 'Small' thumbnails and including all full-size images
+  const imagePatterns: string[] = [];
 
-  // Filter out duplicates by preferring .jpeg over .jpg
+  // Add front view patterns
+  if (product.fit === 'Classic') {
+    // Classic fit patterns
+    imagePatterns.push(
+      `Front,Black, Person 1, ${imagePrefix}.jpeg`,
+      `Front,Black, Person 1, ${imagePrefix}.jpg`,
+      `Front,Black, Person 2, ${imagePrefix}.jpeg`,
+      `Front,Black, Person 2, ${imagePrefix}.jpg`,
+      `Front, Black, Person 1, ${imagePrefix}.jpeg`,
+      `Front, Black, Person 1, ${imagePrefix}.jpg`,
+      `Front, Black, Person 2, ${imagePrefix}.jpeg`,
+      `Front, Black, Person 2, ${imagePrefix}.jpg`,
+      `Front, Black ${imagePrefix}.jpeg`,
+      `Front, Black ${imagePrefix}.jpg`
+    );
+  } else {
+    // Premium fit patterns
+    imagePatterns.push(
+      `Front, Black ${imagePrefix}.jpeg`,
+      `Front, Black ${imagePrefix}.jpg`
+    );
+  }
+
+  // Add back view patterns
+  if (product.fit === 'Classic') {
+    imagePatterns.push(
+      `Back, Black, Person 1, ${imagePrefix}.jpg`,
+      `Back, Black, Person 2, ${imagePrefix}.jpg`,
+      `Back,  Black, Person 1, ${imagePrefix}.jpg`,
+      `Back,  Black, Person 2, ${imagePrefix}.jpg`,
+      `Back,Black, Person 1, ${imagePrefix}.jpg`,
+      `Back,Black, Person 2, ${imagePrefix}.jpg`,
+      `Back, Black, Person 2, ${imagePrefix}.jpg`
+    );
+  } else {
+    imagePatterns.push(
+      `Back, Black ${imagePrefix}.jpeg`,
+      `Back, Black ${imagePrefix}.jpg`,
+      `Back, Black,${imagePrefix}.jpeg`
+    );
+  }
+
+  // Add person back view patterns
+  imagePatterns.push(
+    `Person Back, Black ${imagePrefix}.jpeg`,
+    `Person Back, Black ${imagePrefix}.jpg`,
+    `Person Back, Black,${imagePrefix}.jpeg`
+  );
+
+  // Filter out duplicates by preferring .jpeg over .jpg and exclude 'Small' images
   const uniqueImages: string[] = [];
   const seenBasenames = new Set<string>();
 
   for (const pattern of imagePatterns) {
+    // Skip any patterns that contain 'Small' (thumbnails)
+    if (pattern.toLowerCase().includes('small')) continue;
+    
     const fullPath = `${basePath}/${pattern}`;
     const basename = pattern.replace(/\.(jpeg|jpg)$/, '');
     
@@ -72,7 +108,9 @@ export const getProductImages = (product: Product): string[] => {
     if (!seenBasenames.has(basename) || pattern.endsWith('.jpeg')) {
       if (pattern.endsWith('.jpeg')) {
         // Remove any .jpg version we might have added
-        const jpgIndex = uniqueImages.findIndex(img => img.replace(/\.(jpeg|jpg)$/, '') === basename);
+        const jpgIndex = uniqueImages.findIndex(img => 
+          img.replace(/\.(jpeg|jpg)$/, '').split('/').pop() === basename
+        );
         if (jpgIndex !== -1) {
           uniqueImages[jpgIndex] = fullPath;
         } else {
@@ -85,7 +123,8 @@ export const getProductImages = (product: Product): string[] => {
     }
   }
 
-  return uniqueImages.slice(0, 6); // Limit to 6 best images
+  // Return ALL unique images (no limit)
+  return uniqueImages;
 };
 
 // Get the image prefix based on product details
