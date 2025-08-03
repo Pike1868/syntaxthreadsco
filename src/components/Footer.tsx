@@ -5,8 +5,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-gray-300 mt-20">
-      <div className="align-element py-16">
+    <footer className="bg-card border-t border-border mt-20">
+      <div className="align-element py-12">
+        {/* Main Footer Content */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Section */}
           <div className="lg:col-span-2">
@@ -14,95 +15,86 @@ export default function Footer() {
               <img 
                 src="/syntax-threads-light-logo2.png"
                 alt="SyntaxThreadsCo Logo" 
-                className="h-8 w-auto mb-4" 
+                className="h-8 w-auto mb-4 dark:block hidden" 
+              />
+              <img 
+                src="/syntaxthreads-original-logo2.png"
+                alt="SyntaxThreadsCo Logo" 
+                className="h-8 w-auto mb-4 dark:hidden block" 
               />
             </div>
-            <p className="text-gray-400 leading-relaxed max-w-md">
+            <p className="text-muted-foreground leading-relaxed max-w-md mb-4">
               Premium apparel for developers who code with passion. Express your programming 
               language pride with our minimalist "Warrior" collection.
             </p>
-            <div className="flex gap-4 mt-6">
-              <a 
-                href="https://www.etsy.com/shop/SyntaxThreadsCo" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors"
-              >
-                <ExternalLink className="h-4 w-4" />
-                <span className="text-sm">Shop on Etsy</span>
-              </a>
-            </div>
+            <a 
+              href="https://www.etsy.com/shop/SyntaxThreadsCo" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+            >
+              <ExternalLink className="h-4 w-4" />
+              <span className="text-sm font-medium">Shop on Etsy</span>
+            </a>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/products" className="text-muted-foreground hover:text-foreground transition-colors">
                   Products
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
                   About
                 </Link>
-              </li>
-              <li>
-                <a 
-                  href="https://www.etsy.com/shop/SyntaxThreadsCo" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Etsy Store
-                </a>
               </li>
             </ul>
           </div>
 
-          {/* Developer Info */}
+          {/* Legal & Support */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Collections</h3>
+            <h3 className="font-semibold text-foreground mb-4">Support</h3>
             <ul className="space-y-3">
-              <li className="text-gray-400">
-                <span className="font-mono text-red-400">Python</span> Warrior
+              <li>
+                <a 
+                  href="mailto:hello@syntaxthreads.com" 
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Contact
+                </a>
               </li>
-              <li className="text-gray-400">
-                <span className="font-mono text-red-400">TypeScript</span> Warrior
+              <li>
+                <Link to="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Privacy Policy
+                </Link>
               </li>
-              <li className="text-gray-400">
-                <span className="font-mono text-red-400">Java</span> Warrior
-              </li>
-              <li className="text-gray-400">
-                <span className="font-mono text-red-400">Rust</span> Warrior
-              </li>
-              <li className="text-gray-400">
-                <span className="font-mono text-red-400">C#</span> Warrior
+              <li>
+                <Link to="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Terms of Service
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-gray-400 text-sm">
+        <div className="border-t border-border mt-8 pt-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="text-muted-foreground text-sm">
               © {currentYear} SyntaxThreadsCo. All rights reserved.
             </div>
             
-            <div className="flex items-center gap-6 text-sm">
-              <div className="text-gray-400">
-                Made with <span className="text-red-400">♥</span> for developers
-              </div>
-              <div className="text-gray-500">
-                <span className="font-mono text-xs">// Clean code, clean style</span>
-              </div>
+            <div className="text-muted-foreground text-sm">
+              Made with <span className="text-primary">♥</span> for developers
             </div>
           </div>
         </div>

@@ -80,7 +80,7 @@ export default function ImageCarousel({ images, alt, className = '' }: ImageCaro
             <img
               src={image}
               alt={`${alt} - View ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               onLoad={() => handleImageLoad(index)}
               onError={() => handleImageError(index)}
               loading={index === 0 ? 'eager' : 'lazy'}
@@ -134,7 +134,7 @@ export default function ImageCarousel({ images, alt, className = '' }: ImageCaro
               <img
                 src={image}
                 alt={`${alt} thumbnail ${index + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 loading="lazy"
               />
             </button>

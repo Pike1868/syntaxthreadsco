@@ -38,112 +38,110 @@ export const getProductImages = (product: Product): string[] => {
   if (!folderName) return [];
 
   const basePath = `${MOCKUPS_BASE_PATH}/${folderName}`;
-  const imagePrefix = getImagePrefix(product);
   
-  // Generate all possible image patterns based on observed folder structure
-  // Excluding 'Small' thumbnails and including all full-size images
+  // Define image patterns based on actual file structure observed
+  // Only using .jpeg files and excluding 'Small' thumbnails
   const imagePatterns: string[] = [];
-
-  // Add front view patterns
-  if (product.fit === 'Classic') {
-    // Classic fit patterns
-    imagePatterns.push(
-      `Front,Black, Person 1, ${imagePrefix}.jpeg`,
-      `Front,Black, Person 1, ${imagePrefix}.jpg`,
-      `Front,Black, Person 2, ${imagePrefix}.jpeg`,
-      `Front,Black, Person 2, ${imagePrefix}.jpg`,
-      `Front, Black, Person 1, ${imagePrefix}.jpeg`,
-      `Front, Black, Person 1, ${imagePrefix}.jpg`,
-      `Front, Black, Person 2, ${imagePrefix}.jpeg`,
-      `Front, Black, Person 2, ${imagePrefix}.jpg`,
-      `Front, Black ${imagePrefix}.jpeg`,
-      `Front, Black ${imagePrefix}.jpg`
-    );
-  } else {
-    // Premium fit patterns
-    imagePatterns.push(
-      `Front, Black ${imagePrefix}.jpeg`,
-      `Front, Black ${imagePrefix}.jpg`
-    );
+  
+  // Language and fit specific patterns based on actual file names
+  switch (product.language) {
+    case 'Python':
+      if (product.fit === 'Classic') {
+        imagePatterns.push(
+          'Front, Black, Person 1, Python Warrior Classic Fit.jpeg',
+          'Front, Black, Person 2, Python Warrior Classic Fit.jpeg',
+          'Back, Black, Person 1, Python Warrior Classic Fit.jpg',
+          'Back, Black, Person 2, Python Warrior Classic Fit.jpg'
+        );
+      } else {
+        imagePatterns.push(
+          'Back, Black Python Warrior Mockup .jpeg', // Note: space before .jpeg in actual filename
+          'Person Back, Black Python Warrior Mockup.jpeg'
+        );
+      }
+      break;
+      
+    case 'Java':
+      if (product.fit === 'Classic') {
+        imagePatterns.push(
+          'Front, Black Java Warrior Classic Fit.jpeg',
+          'Front, Black, Person 1, Java Warrior Classic Fit.jpeg',
+          'Front, Black, Person 2, Java Warrior Classic Fit.jpeg',
+          'Back,  Black, Person 1, Java Warrior Classic Fit.jpg',
+          'Back,  Black, Person 2, Java Warrior Classic Fit.jpg'
+        );
+      } else {
+        imagePatterns.push(
+          'Back, Black Java Warrior Heavyweight Mockup.jpeg',
+          'Person Back, Black Java Warrior Heavyweight Mockup.jpeg'
+        );
+      }
+      break;
+      
+    case 'Rust':
+      if (product.fit === 'Classic') {
+        imagePatterns.push(
+          'Front,Black, Person 1, Rust Warrior.jpeg',
+          'Front,Black, Person 2, Rust Warrior.jpeg',
+          'Back,Black, Person 1, Rust Warrior.jpg',
+          'Back,Black, Person 2, Rust Warrior.jpg'
+        );
+      } else {
+        imagePatterns.push(
+          'Back, Black Heavyweight Mockup.jpeg',
+          'Person Back, Black Rust Warior Heavyweight Mockup.jpeg' // Note: typo in actual filename
+        );
+      }
+      break;
+      
+    case 'TypeScript':
+      if (product.fit === 'Classic') {
+        imagePatterns.push(
+          'Front,Black, Person 1, Typescript Warrior Mockup.jpeg',
+          'Front,Black, Person 2, Typescript Warrior Mockup.jpeg',
+          'Back,Black, Person 1, Typescript Warrior Mockup.jpg',
+          'Back, Black, Person 2, Typescript Warrior Mockup.jpg'
+        );
+      } else {
+        imagePatterns.push(
+          'Back, Black,Premium Heavyweight TypeScript Mockup.jpeg',
+          'Person Back, Black,Premium Heavyweight TypeScript Mockup.jpeg'
+        );
+      }
+      break;
+      
+    case 'C#':
+      if (product.fit === 'Classic') {
+        imagePatterns.push(
+          'Front,Black, Person 1, C# Warrior Mockup.jpeg',
+          'Front,Black, Person 2, C# Warrior Mockup.jpeg'
+        );
+      } else {
+        imagePatterns.push(
+          'Back, Black C# Warrior Mockup.jpeg',
+          'Person Back, Black C# Warrior Mockup.jpeg'
+        );
+      }
+      break;
   }
 
-  // Add back view patterns
-  if (product.fit === 'Classic') {
-    imagePatterns.push(
-      `Back, Black, Person 1, ${imagePrefix}.jpg`,
-      `Back, Black, Person 2, ${imagePrefix}.jpg`,
-      `Back,  Black, Person 1, ${imagePrefix}.jpg`,
-      `Back,  Black, Person 2, ${imagePrefix}.jpg`,
-      `Back,Black, Person 1, ${imagePrefix}.jpg`,
-      `Back,Black, Person 2, ${imagePrefix}.jpg`,
-      `Back, Black, Person 2, ${imagePrefix}.jpg`
-    );
-  } else {
-    imagePatterns.push(
-      `Back, Black ${imagePrefix}.jpeg`,
-      `Back, Black ${imagePrefix}.jpg`,
-      `Back, Black,${imagePrefix}.jpeg`
-    );
-  }
-
-  // Add person back view patterns
-  imagePatterns.push(
-    `Person Back, Black ${imagePrefix}.jpeg`,
-    `Person Back, Black ${imagePrefix}.jpg`,
-    `Person Back, Black,${imagePrefix}.jpeg`
-  );
-
-  // Filter out duplicates by preferring .jpeg over .jpg and exclude 'Small' images
-  const uniqueImages: string[] = [];
-  const seenBasenames = new Set<string>();
-
+  // Filter out 'Small' images and only return .jpeg files
+  const validImages: string[] = [];
+  
   for (const pattern of imagePatterns) {
     // Skip any patterns that contain 'Small' (thumbnails)
     if (pattern.toLowerCase().includes('small')) continue;
     
-    const fullPath = `${basePath}/${pattern}`;
-    const basename = pattern.replace(/\.(jpeg|jpg)$/, '');
-    
-    // If we haven't seen this image basename, or if this is a .jpeg version
-    if (!seenBasenames.has(basename) || pattern.endsWith('.jpeg')) {
-      if (pattern.endsWith('.jpeg')) {
-        // Remove any .jpg version we might have added
-        const jpgIndex = uniqueImages.findIndex(img => 
-          img.replace(/\.(jpeg|jpg)$/, '').split('/').pop() === basename
-        );
-        if (jpgIndex !== -1) {
-          uniqueImages[jpgIndex] = fullPath;
-        } else {
-          uniqueImages.push(fullPath);
-        }
-      } else if (!seenBasenames.has(basename)) {
-        uniqueImages.push(fullPath);
-      }
-      seenBasenames.add(basename);
+    // Only include .jpeg files for high quality
+    if (pattern.endsWith('.jpeg')) {
+      const fullPath = `${basePath}/${pattern}`;
+      validImages.push(fullPath);
     }
   }
 
-  // Return ALL unique images (no limit)
-  return uniqueImages;
+  return validImages;
 };
 
-// Get the image prefix based on product details
-const getImagePrefix = (product: Product): string => {
-  switch (product.language) {
-    case 'Python':
-      return product.fit === 'Classic' ? 'Python Warrior Classic Fit' : 'Python Warrior Mockup';
-    case 'Java':
-      return product.fit === 'Classic' ? 'Java Warrior Classic Fit' : 'Java Warrior Heavyweight Mockup';
-    case 'Rust':
-      return product.fit === 'Classic' ? 'Rust Warrior' : 'Rust Warior Heavyweight Mockup'; // Note: keeping typo from folder
-    case 'TypeScript':
-      return product.fit === 'Classic' ? 'Typescript Warrior Mockup' : 'Premium Heavyweight TypeScript Mockup';
-    case 'C#':
-      return product.fit === 'Classic' ? 'C# Warrior Mockup' : 'C# Warrior Mockup';
-    default:
-      return '';
-  }
-};
 
 // Placeholder image for when mockups aren't available
 export const getPlaceholderImage = (): string => {
