@@ -1,0 +1,102 @@
+import { useParams, Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Product } from '@/types/product';
+import productData from '@/data/products.json';
+
+export default function SingleProduct() {
+  const { id } = useParams<{ id: string }>();
+  
+  // Find product by listingId or generated slug
+  const product = productData.products.find((p: Product) => {
+    const productId = p.listingId || p.title.replace(/\s+/g, '-').toLowerCase();
+    return productId.toString() === id;
+  });
+
+  if (!product) {
+    return (
+      <div className="align-element py-20 text-center">
+        <h2 className="text-2xl font-bold mb-4">Product not found</h2>
+        <Link to="/products">
+          <Button>View All Products</Button>
+        </Link>
+      </div>
+    );
+  }
+
+  const { title, language, fit, basePrice, currency, etsyUrl } = product;
+
+  const handleBuyOnEtsy = () => {
+    window.open(etsyUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  return (
+    <div className="align-element py-20">
+      <div className="grid gap-y-8 lg:grid-cols-2 lg:gap-x-16">
+        {/* Product Image */}
+        <div className="lg:order-2">
+          <div className="rounded-lg bg-gray-100 p-16 h-96 flex items-center justify-center">
+            <div className="text-center">
+              <h1 className="font-mono text-4xl font-bold text-gray-800 mb-4">
+                {language}
+              </h1>
+              <p className="text-xl text-gray-600 mb-2">WARRIOR</p>
+              <p className="text-sm text-gray-500">{fit} Fit</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Product Info */}
+        <div className="lg:order-1">
+          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            {title}
+          </h1>
+          
+          <div className="mt-6">
+            <p className="text-3xl font-bold text-gray-900">
+              ${basePrice.toFixed(2)} {currency}
+            </p>
+          </div>
+
+          <div className="mt-6">
+            <h3 className="text-sm font-medium text-gray-900">Description</h3>
+            <div className="mt-4 prose prose-sm text-gray-500">
+              <p>
+                Premium {fit.toLowerCase()} fit T-shirt celebrating {language} developers. 
+                Comfortable, durable, and perfect for coding sessions or casual wear.
+              </p>
+              <ul className="mt-4">
+                <li>High-quality cotton blend</li>
+                <li>{fit} everyday fit</li>
+                <li>Soft, comfortable feel</li>
+                <li>Pre-shrunk for perfect fit</li>
+                <li>Machine washable</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-8 space-y-4">
+            <Button 
+              onClick={handleBuyOnEtsy}
+              size="lg" 
+              className="w-full"
+            >
+              Buy on Etsy - ${basePrice.toFixed(2)}
+            </Button>
+            
+            <p className="text-xs text-gray-500 text-center">
+              You'll be redirected to our Etsy store to complete your purchase
+            </p>
+          </div>
+
+          <div className="mt-8">
+            <Link to="/products">
+              <Button variant="outline" size="sm">
+                ← Back to Products
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

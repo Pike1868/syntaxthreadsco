@@ -1,0 +1,104 @@
+{
+  "products": [
+    {
+      "listingId": 4334933142,
+      "title": "Python Warrior – Classic Everyday Fit",
+      "language": "Python",
+      "fit": "Classic",
+      "basePrice": 28.20,
+      "currency": "USD",
+      "etsyUrl": "https://www.etsy.com/listing/4334933142",
+      "images": []
+    },
+    {
+      "listingId": 4334932966,
+      "title": "Java Warrior – Premium Heavyweight Fit",
+      "language": "Java",
+      "fit": "Premium",
+      "basePrice": 37.79,
+      "currency": "USD",
+      "etsyUrl": "https://www.etsy.com/listing/4334932966",
+      "images": []
+    },
+    {
+      "listingId": 4334933266,
+      "title": "Java Warrior – Classic Everyday Fit",
+      "language": "Java",
+      "fit": "Classic",
+      "basePrice": 28.20,
+      "currency": "USD",
+      "etsyUrl": "https://www.etsy.com/listing/4334933266",
+      "images": []
+    },
+    {
+      "listingId": 4334935561,
+      "title": "Rust Warrior – Premium Heavyweight Fit",
+      "language": "Rust",
+      "fit": "Premium",
+      "basePrice": 37.79,
+      "currency": "USD",
+      "etsyUrl": "https://www.etsy.com/listing/4334935561",
+      "images": []
+    },
+    {
+      "listingId": null,
+      "title": "Rust Warrior – Classic Everyday Fit",
+      "language": "Rust",
+      "fit": "Classic",
+      "basePrice": 28.20,
+      "currency": "USD",
+      "etsyUrl": "https://www.etsy.com/shop/SyntaxThreadsCo?ref=shop_profile&listing_id=unknown",
+      "images": []
+    },
+    {
+      "listingId": 4334932864,
+      "title": "TypeScript Warrior – Premium Heavyweight Fit",
+      "language": "TypeScript",
+      "fit": "Premium",
+      "basePrice": 37.79,
+      "currency": "USD",
+      "etsyUrl": "https://www.etsy.com/listing/4334932864",
+      "images": []
+    },
+    {
+      "listingId": 4334935909,
+      "title": "TypeScript Warrior – Classic Everyday Fit",
+      "language": "TypeScript",
+      "fit": "Classic",
+      "basePrice": 28.20,
+      "currency": "USD",
+      "etsyUrl": "https://www.etsy.com/listing/4334935909",
+      "images": []
+    },
+    {
+      "listingId": null,
+      "title": "C# Warrior – Premium Heavyweight Fit",
+      "language": "C#",
+      "fit": "Premium",
+      "basePrice": 37.79,
+      "currency": "USD",
+      "etsyUrl": "https://www.etsy.com/shop/SyntaxThreadsCo?ref=shop_profile&listing_id=unknown",
+      "images": []
+    },
+    {
+      "listingId": null,
+      "title": "C# Warrior – Classic Everyday Fit",
+      "language": "C#",
+      "fit": "Classic",
+      "basePrice": 28.20,
+      "currency": "USD",
+      "etsyUrl": "https://www.etsy.com/shop/SyntaxThreadsCo?ref=shop_profile&listing_id=unknown",
+      "images": []
+    },
+    {
+      "listingId": null,
+      "title": "Python Warrior – Premium Heavyweight Fit",
+      "language": "Python",
+      "fit": "Premium",
+      "basePrice": 37.79,
+      "currency": "USD",
+      "etsyUrl": "https://www.etsy.com/shop/SyntaxThreadsCo?ref=shop_profile&listing_id=unknown",
+      "images": []
+    }
+  ]
+}
