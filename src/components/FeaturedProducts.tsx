@@ -14,12 +14,12 @@ export default function FeaturedProducts() {
       
       <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {featuredProducts.map((product) => {
-          const { listingId, title, language, fit, basePrice } = product;
+          const { listingId, title, language, basePrice } = product;
           const productId = listingId || title.replace(/\s+/g, '-').toLowerCase();
           
           // Get the first image for featured display
           const productImages = getProductImages(product);
-          const displayImage = productImages[0] || getPlaceholderImage(product);
+          const displayImage = productImages[0] || getPlaceholderImage();
           
           return (
             <Link key={productId} to={`/product/${productId}`}>

@@ -29,7 +29,7 @@ export default function SingleProduct() {
 
   // Get product images
   const productImages = getProductImages(product);
-  const imagesToShow = productImages.length > 0 ? productImages : [getPlaceholderImage(product)];
+  const imagesToShow = productImages.length > 0 ? productImages : [getPlaceholderImage()];
 
   const handleBuyOnEtsy = () => {
     window.open(etsyUrl, '_blank', 'noopener,noreferrer');

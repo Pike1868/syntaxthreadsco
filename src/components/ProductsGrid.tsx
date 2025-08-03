@@ -14,7 +14,7 @@ export default function ProductsGrid() {
         
         // Get the first image for the grid
         const productImages = getProductImages(product);
-        const displayImage = productImages[0] || getPlaceholderImage(product);
+        const displayImage = productImages[0] || getPlaceholderImage();
         
         return (
           <Link key={productId} to={`/product/${productId}`}>

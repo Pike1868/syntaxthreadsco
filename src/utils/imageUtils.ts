@@ -5,7 +5,6 @@ const MOCKUPS_BASE_PATH = '/SyntaxThreads-WarriorSeries-Mockups/Mockups';
 
 // Map product languages to their folder names
 const getLanguageFolderName = (language: string, fit: string): string => {
-  const fitSuffix = fit === 'Classic' ? 'Classic Fit' : 'Premium';
   
   switch (language) {
     case 'Python':
@@ -108,7 +107,7 @@ const getImagePrefix = (product: Product): string => {
 };
 
 // Placeholder image for when mockups aren't available
-export const getPlaceholderImage = (product: Product): string => {
+export const getPlaceholderImage = (): string => {
   return '/SyntaxThreads-WarriorSeries-Mockups/Mockups/Front, Black Generic SyntaxThreads Mockup.jpeg';
 };
 
