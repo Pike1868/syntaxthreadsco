@@ -5,7 +5,7 @@ import productData from '@/data/products.json';
 
 export default function FeaturedProducts() {
   // Get featured products - let's show the first 4 products
-  const featuredProducts = productData.products.slice(0, 4);
+  const featuredProducts = (productData.products as import('@/types/product').Product[]).slice(0, 4);
 
   return (
     <div className="pt-24">
@@ -13,7 +13,7 @@ export default function FeaturedProducts() {
       
       <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {featuredProducts.map((product) => {
-          const { listingId, title, language, fit, basePrice, currency } = product;
+          const { listingId, title, language, fit, basePrice } = product;
           const productId = listingId || title.replace(/\s+/g, '-').toLowerCase();
           
           return (

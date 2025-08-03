@@ -7,7 +7,7 @@ export default function SingleProduct() {
   const { id } = useParams<{ id: string }>();
   
   // Find product by listingId or generated slug
-  const product = productData.products.find((p: Product) => {
+  const product = (productData.products as Product[]).find((p) => {
     const productId = p.listingId || p.title.replace(/\s+/g, '-').toLowerCase();
     return productId.toString() === id;
   });

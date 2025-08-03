@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Product } from '@/types/product';
 import productData from '@/data/products.json';
 
 export default function ProductsGrid() {
@@ -7,7 +6,7 @@ export default function ProductsGrid() {
 
   return (
     <div className="pt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {products.map((product) => {
+      {(products as import('@/types/product').Product[]).map((product) => {
         const { listingId, title, language, fit, basePrice, currency } = product;
         // Use listingId as unique identifier, fallback to title if null
         const productId = listingId || title.replace(/\s+/g, '-').toLowerCase();
