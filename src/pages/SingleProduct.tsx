@@ -1,6 +1,8 @@
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Product } from '@/types/product';
+import { ImageCarousel } from '@/components';
+import { getProductImages, getPlaceholderImage } from '@/utils/imageUtils';
 import productData from '@/data/products.json';
 
 export default function SingleProduct() {
@@ -25,6 +27,10 @@ export default function SingleProduct() {
 
   const { title, language, fit, basePrice, currency, etsyUrl } = product;
 
+  // Get product images
+  const productImages = getProductImages(product);
+  const imagesToShow = productImages.length > 0 ? productImages : [getPlaceholderImage(product)];
+
   const handleBuyOnEtsy = () => {
     window.open(etsyUrl, '_blank', 'noopener,noreferrer');
   };
@@ -32,17 +38,13 @@ export default function SingleProduct() {
   return (
     <div className="align-element py-20">
       <div className="grid gap-y-8 lg:grid-cols-2 lg:gap-x-16">
-        {/* Product Image */}
+        {/* Product Images Carousel */}
         <div className="lg:order-2">
-          <div className="rounded-lg bg-gray-100 p-16 h-96 flex items-center justify-center">
-            <div className="text-center">
-              <h1 className="font-mono text-4xl font-bold text-gray-800 mb-4">
-                {language}
-              </h1>
-              <p className="text-xl text-gray-600 mb-2">WARRIOR</p>
-              <p className="text-sm text-gray-500">{fit} Fit</p>
-            </div>
-          </div>
+          <ImageCarousel 
+            images={imagesToShow}
+            alt={title}
+            className="w-full"
+          />
         </div>
 
         {/* Product Info */}

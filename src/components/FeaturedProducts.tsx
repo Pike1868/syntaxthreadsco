@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { SectionTitle } from '.';
+import { getProductImages, getPlaceholderImage } from '@/utils/imageUtils';
 import productData from '@/data/products.json';
 
 export default function FeaturedProducts() {
@@ -16,16 +17,28 @@ export default function FeaturedProducts() {
           const { listingId, title, language, fit, basePrice } = product;
           const productId = listingId || title.replace(/\s+/g, '-').toLowerCase();
           
+          // Get the first image for featured display
+          const productImages = getProductImages(product);
+          const displayImage = productImages[0] || getPlaceholderImage(product);
+          
           return (
             <Link key={productId} to={`/product/${productId}`}>
               <article className="group cursor-pointer">
-                <div className="rounded-lg bg-gray-100 p-6 h-48 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
-                  <div className="text-center">
-                    <h3 className="font-mono text-xl font-bold text-gray-800">
-                      {language}
-                    </h3>
-                    <p className="text-sm text-gray-600 mt-1">WARRIOR</p>
-                    <p className="text-xs text-gray-500">{fit}</p>
+                <div className="relative rounded-lg bg-gray-100 h-48 overflow-hidden">
+                  <img 
+                    src={displayImage}
+                    alt={title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="text-center text-white">
+                      <h3 className="font-mono text-lg font-bold">
+                        {language}
+                      </h3>
+                      <p className="text-sm mt-1">WARRIOR</p>
+                    </div>
                   </div>
                 </div>
                 

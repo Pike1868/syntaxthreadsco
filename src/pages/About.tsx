@@ -10,7 +10,7 @@ export default function About() {
           Compile Your <span className="px-4 py-2 tracking-widest text-white rounded-lg bg-primary">Style</span>
         </h1>
         
-        <p className="max-w-2xl mx-auto mt-6 text-lg leading-8 tracking-wide text-gray-600">
+        <p className="max-w-2xl mx-auto mt-6 text-lg leading-8 tracking-wide text-muted-foreground">
           Welcome to SyntaxThreadsCo, where technology meets fashion in a unique blend of style and substance. 
           Born from a passion for clean code and clever design, our apparel celebrates the languages and tools 
           that developers love most.

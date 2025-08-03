@@ -5,11 +5,11 @@ export default function Logo() {
     const theme = useAppSelector((state) => state.themeState.theme);
 
     return (
-        <Link to="/" className="items-center justify-center hidden w-16 h-16 rounded-lg md:flex">
+        <Link to="/" className="flex items-center justify-center">
             <img 
-                src={theme === "light" ? "/syntax_threads_logo.svg" : "/syntax_threads_logo_dark.svg"}
-                alt="Syntax Threads Logo" 
-                className="object-contain w-full h-full " 
+                src={theme === "light" ? "/syntaxthreads-original-logo2.png" : "/syntax-threads-light-logo2.png"}
+                alt="SyntaxThreadsCo Logo" 
+                className="h-8 w-auto md:h-10 object-contain transition-all duration-200 hover:scale-105" 
             />
         </Link>
     );

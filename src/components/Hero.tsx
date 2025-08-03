@@ -11,7 +11,7 @@ export default function Hero() {
           <span className="font-mono text-primary">SyntaxThreadsCo</span>
         </h1>
         
-        <p className="mt-8 max-w-xl text-lg leading-8 text-gray-600">
+        <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground">
           Premium apparel for developers who code with passion. Express your programming 
           language pride with our minimalist "Warrior" collection.
         </p>
@@ -30,26 +30,26 @@ export default function Hero() {
           </Link>
         </div>
         
-        <div className="mt-8 text-sm text-gray-500">
-          <p>Available languages: Python • Java • Rust • TypeScript • C#</p>
+        <div className="mt-8 text-sm text-muted-foreground">
+          <p>Available languages: <span className="font-mono">Python • Java • Rust • TypeScript • C#</span></p>
         </div>
       </div>
 
       {/* Hero Visual */}
       <div className="hidden lg:block">
         <div className="relative">
-          <div className="bg-gray-100 rounded-lg p-16 text-center">
+          <div className="bg-muted rounded-lg p-16 text-center border">
             <div className="space-y-6">
-              <div className="font-mono text-2xl font-bold text-gray-800">
+              <div className="font-mono text-2xl font-bold text-primary">
                 {'{ PYTHON WARRIOR }'}
               </div>
-              <div className="font-mono text-lg text-gray-600">
+              <div className="font-mono text-lg text-muted-foreground">
                 class Developer:
               </div>
-              <div className="font-mono text-lg text-gray-600 ml-4">
+              <div className="font-mono text-lg text-muted-foreground ml-4">
                 def wear_style(self):
               </div>
-              <div className="font-mono text-lg text-gray-600 ml-8">
+              <div className="font-mono text-lg text-foreground ml-8">
                 return "SyntaxThreadsCo"
               </div>
             </div>
