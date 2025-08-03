@@ -39,6 +39,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          cname: syntaxthreads.com
+          cname: www.syntaxthreads.com
           force_orphan: true
           enable_jekyll: false
