@@ -25,8 +25,8 @@ const getLanguageFolderName = (language: string, fit: string): string => {
         : 'TypeScript Warrior Premium Mockups';
     case 'C#':
       return fit === 'Classic'
-        ? 'C# Warrior Classic Fit Mockups'
-        : 'C# Warrior Premium Mockups';
+        ? 'CSharp Warrior Classic Fit Mockups'
+        : 'CSharp Warrior Premium Mockups';
     default:
       return '';
   }
@@ -39,101 +39,86 @@ export const getProductImages = (product: Product): string[] => {
 
   const basePath = `${MOCKUPS_BASE_PATH}/${folderName}`;
   
-  // Define image patterns based on actual file structure observed
-  // Only using .jpeg files and excluding 'Small' thumbnails
+  // Use standardized naming for Premium products, original logic for Classic
+  if (product.fit === 'Premium') {
+    return getPremiumImages(product, basePath);
+  } else {
+    return getClassicImages(product, basePath);
+  }
+};
+
+// Get standardized Premium images (5 images each)
+const getPremiumImages = (product: Product, basePath: string): string[] => {
+  // Use "CSharp" instead of "C#" for file names
+  const language = product.language === 'C#' ? 'CSharp' : product.language;
+  
+  const standardizedImages = [
+    `Front Generic ${language} Warrior Premium.jpeg`,
+    `Person Front Generic ${language} Warrior Premium.jpeg`, 
+    `Person Closeup Generic ${language} Warrior Premium.jpeg`,
+    `Back ${language} Warrior Premium.jpeg`,
+    `Person Back ${language} Warrior Premium.jpeg`
+  ];
+  
+  return standardizedImages.map(image => `${basePath}/${image}`);
+};
+
+// Get Classic images (original logic)
+const getClassicImages = (product: Product, basePath: string): string[] => {
   const imagePatterns: string[] = [];
   
-  // Language and fit specific patterns based on actual file names
   switch (product.language) {
     case 'Python':
-      if (product.fit === 'Classic') {
-        imagePatterns.push(
-          'Front, Black, Person 1, Python Warrior Classic Fit.jpeg',
-          'Front, Black, Person 2, Python Warrior Classic Fit.jpeg',
-          'Back, Black, Person 1, Python Warrior Classic Fit.jpg',
-          'Back, Black, Person 2, Python Warrior Classic Fit.jpg'
-        );
-      } else {
-        imagePatterns.push(
-          'Back, Black Python Warrior Mockup .jpeg', // Note: space before .jpeg in actual filename
-          'Person Back, Black Python Warrior Mockup.jpeg'
-        );
-      }
+      imagePatterns.push(
+        'Front, Black, Person 1, Python Warrior Classic Fit.jpeg',
+        'Front, Black, Person 2, Python Warrior Classic Fit.jpeg',
+        'Back, Black, Person 1, Python Warrior Classic Fit.jpg',
+        'Back, Black, Person 2, Python Warrior Classic Fit.jpg'
+      );
       break;
       
     case 'Java':
-      if (product.fit === 'Classic') {
-        imagePatterns.push(
-          'Front, Black Java Warrior Classic Fit.jpeg',
-          'Front, Black, Person 1, Java Warrior Classic Fit.jpeg',
-          'Front, Black, Person 2, Java Warrior Classic Fit.jpeg',
-          'Back,  Black, Person 1, Java Warrior Classic Fit.jpg',
-          'Back,  Black, Person 2, Java Warrior Classic Fit.jpg'
-        );
-      } else {
-        imagePatterns.push(
-          'Back, Black Java Warrior Heavyweight Mockup.jpeg',
-          'Person Back, Black Java Warrior Heavyweight Mockup.jpeg'
-        );
-      }
+      imagePatterns.push(
+        'Front, Black Java Warrior Classic Fit.jpeg',
+        'Front, Black, Person 1, Java Warrior Classic Fit.jpeg',
+        'Front, Black, Person 2, Java Warrior Classic Fit.jpeg',
+        'Back,  Black, Person 1, Java Warrior Classic Fit.jpg',
+        'Back,  Black, Person 2, Java Warrior Classic Fit.jpg'
+      );
       break;
       
     case 'Rust':
-      if (product.fit === 'Classic') {
-        imagePatterns.push(
-          'Front,Black, Person 1, Rust Warrior.jpeg',
-          'Front,Black, Person 2, Rust Warrior.jpeg',
-          'Back,Black, Person 1, Rust Warrior.jpg',
-          'Back,Black, Person 2, Rust Warrior.jpg'
-        );
-      } else {
-        imagePatterns.push(
-          'Back, Black Heavyweight Mockup.jpeg',
-          'Person Back, Black Rust Warior Heavyweight Mockup.jpeg' // Note: typo in actual filename
-        );
-      }
+      imagePatterns.push(
+        'Front,Black, Person 1, Rust Warrior.jpeg',
+        'Front,Black, Person 2, Rust Warrior.jpeg',
+        'Back,Black, Person 1, Rust Warrior.jpg',
+        'Back,Black, Person 2, Rust Warrior.jpg'
+      );
       break;
       
     case 'TypeScript':
-      if (product.fit === 'Classic') {
-        imagePatterns.push(
-          'Front,Black, Person 1, Typescript Warrior Mockup.jpeg',
-          'Front,Black, Person 2, Typescript Warrior Mockup.jpeg',
-          'Back,Black, Person 1, Typescript Warrior Mockup.jpg',
-          'Back, Black, Person 2, Typescript Warrior Mockup.jpg'
-        );
-      } else {
-        imagePatterns.push(
-          'Back, Black,Premium Heavyweight TypeScript Mockup.jpeg',
-          'Person Back, Black,Premium Heavyweight TypeScript Mockup.jpeg'
-        );
-      }
+      imagePatterns.push(
+        'Front,Black, Person 1, Typescript Warrior Mockup.jpeg',
+        'Front,Black, Person 2, Typescript Warrior Mockup.jpeg',
+        'Back,Black, Person 1, Typescript Warrior Mockup.jpg',
+        'Back, Black, Person 2, Typescript Warrior Mockup.jpg'
+      );
       break;
       
     case 'C#':
-      if (product.fit === 'Classic') {
-        imagePatterns.push(
-          'Front,Black, Person 1, C# Warrior Mockup.jpeg',
-          'Front,Black, Person 2, C# Warrior Mockup.jpeg'
-        );
-      } else {
-        imagePatterns.push(
-          'Back, Black C# Warrior Mockup.jpeg',
-          'Person Back, Black C# Warrior Mockup.jpeg'
-        );
-      }
+      imagePatterns.push(
+        'Front,Black, Person 1, CSharp Warrior Mockup.jpeg',
+        'Front,Black, Person 2, CSharp Warrior Mockup.jpeg'
+      );
       break;
   }
 
-  // Filter out 'Small' images and only return .jpeg files
+  // Filter out 'Small' images and return both .jpeg and .jpg files
   const validImages: string[] = [];
   
   for (const pattern of imagePatterns) {
-    // Skip any patterns that contain 'Small' (thumbnails)
     if (pattern.toLowerCase().includes('small')) continue;
-    
-    // Only include .jpeg files for high quality
-    if (pattern.endsWith('.jpeg')) {
+    if (pattern.endsWith('.jpeg') || pattern.endsWith('.jpg')) {
       const fullPath = `${basePath}/${pattern}`;
       validImages.push(fullPath);
     }

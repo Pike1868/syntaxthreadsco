@@ -9,13 +9,13 @@ interface ErrorFallbackProps {
 function ErrorFallback({ error, resetError }: ErrorFallbackProps) {
   const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full bg-white shadow-lg rounded-lg p-6 text-center">
+    <div className="min-h-screen flex items-center justify-center bg-muted">
+      <div className="max-w-md w-full bg-background shadow-lg rounded-lg p-6 text-center">
         <div className="mb-4">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl font-bold text-foreground mb-2">
             Oops! Something went wrong
           </h1>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             We've been notified about this error and will fix it soon.
           </p>
         </div>

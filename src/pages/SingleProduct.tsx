@@ -10,7 +10,10 @@ export default function SingleProduct() {
   
   // Find product by listingId or generated slug
   const product = (productData.products as Product[]).find((p) => {
-    const productId = p.listingId || p.title.replace(/\s+/g, '-').toLowerCase();
+    const productId = p.listingId || p.title
+      .replace(/[^\w\s]/g, '') // Remove special characters
+      .replace(/\s+/g, '-')    // Replace spaces with dashes
+      .toLowerCase();
     return productId.toString() === id;
   });
 
@@ -49,19 +52,19 @@ export default function SingleProduct() {
 
         {/* Product Info */}
         <div className="lg:order-1">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {title}
           </h1>
           
           <div className="mt-6">
-            <p className="text-3xl font-bold text-gray-900">
+            <p className="text-3xl font-bold text-foreground">
               ${basePrice.toFixed(2)} {currency}
             </p>
           </div>
 
           <div className="mt-6">
-            <h3 className="text-sm font-medium text-gray-900">Description</h3>
-            <div className="mt-4 prose prose-sm text-gray-500">
+            <h3 className="text-sm font-medium text-foreground">Description</h3>
+            <div className="mt-4 prose prose-sm text-muted-foreground">
               <p>
                 Premium {fit.toLowerCase()} fit T-shirt celebrating {language} developers. 
                 Comfortable, durable, and perfect for coding sessions or casual wear.
@@ -85,7 +88,7 @@ export default function SingleProduct() {
               Buy on Etsy - ${basePrice.toFixed(2)}
             </Button>
             
-            <p className="text-xs text-gray-500 text-center">
+            <p className="text-xs text-muted-foreground text-center">
               You'll be redirected to our Etsy store to complete your purchase
             </p>
           </div>

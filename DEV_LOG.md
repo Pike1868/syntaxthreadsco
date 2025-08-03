@@ -47,6 +47,68 @@
 
 ## Active Tasks
 
+### 📋 IMAGE STANDARDIZATION TASK (For User)
+
+**PRIORITY**: Medium - Required for future product additions and optimal web performance
+
+#### Current Image Issues
+- Mixed file formats (.jpeg/.jpg) causing display inconsistencies
+- Inconsistent file naming conventions across product folders
+- Non-optimized file sizes for web delivery
+- Missing images for some product variants (C# Classic only has front views)
+
+#### Required Image Specifications
+
+**1. Product Grid Thumbnails** (ProductsGrid.tsx, FeaturedProducts.tsx)
+- **Size**: 400x400px or 500x500px (square aspect ratio)
+- **Format**: .webp (preferred) or .jpeg
+- **Compression**: 70-80% quality
+- **Usage**: Card previews in product listings
+
+**2. Product Detail Carousel** (ImageCarousel.tsx on SingleProduct page)
+- **Size**: 800x800px to 1200x1200px (square aspect ratio)  
+- **Format**: .webp (preferred) or .jpeg
+- **Compression**: 80-90% quality
+- **Usage**: Main product showcase with zoom capability
+
+**3. Hero/Featured Images** (Hero.tsx, About.tsx)
+- **Size**: 1200x800px (3:2 aspect ratio)
+- **Format**: .webp (preferred) or .jpeg
+- **Compression**: 80-90% quality
+- **Usage**: Large promotional banners
+
+#### Standardized File Naming Convention
+```
+{Language}-{Fit}-{View}-{Person}-{Color}.{ext}
+
+Examples:
+- Python-Classic-Front-Person1-Black.webp
+- Java-Premium-Back-Person2-Black.webp
+- Rust-Classic-Front-Product-Black.webp (for flat/product shots)
+```
+
+#### Folder Structure (Recommended)
+```
+/public/images/products/
+├── thumbnails/           # 400x400px grid images
+├── gallery/             # 800x1200px carousel images  
+├── hero/               # 1200x800px promotional images
+└── originals/          # Backup of source files
+```
+
+#### Implementation Steps
+1. **Audit current images** - Document what exists vs what's needed
+2. **Create web-optimized versions** using tools like ImageOptim, Squoosh, or similar
+3. **Implement consistent naming** across all product images
+4. **Update imageUtils.ts** to use new folder structure and naming
+5. **Add missing images** for products that only have partial coverage
+6. **Test loading performance** and adjust compression as needed
+
+#### Tools for Image Processing
+- **Online**: Squoosh.app (Google's web image optimizer)
+- **CLI**: ImageMagick, Sharp, or cwebp
+- **Batch**: Photoshop Actions, GIMP batch processing
+
 ### 🔄 Phase 4: Testing & Quality Assurance
 - [ ] Implement unit tests for utility functions (imageUtils.ts)
 - [ ] Add component testing for ImageCarousel and Footer

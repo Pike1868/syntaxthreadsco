@@ -38,26 +38,25 @@ export default function Hero() {
       {/* Hero Visual */}
       <div className="hidden lg:block">
         <div className="relative">
-          <div className="bg-muted rounded-lg p-16 text-center border">
-            <div className="space-y-6">
-              <div className="font-mono text-2xl font-bold text-primary">
-                {'{ PYTHON WARRIOR }'}
-              </div>
-              <div className="font-mono text-lg text-muted-foreground">
-                class Developer:
-              </div>
-              <div className="font-mono text-lg text-muted-foreground ml-4">
-                def wear_style(self):
-              </div>
-              <div className="font-mono text-lg text-foreground ml-8">
-                return "SyntaxThreadsCo"
-              </div>
-            </div>
+          <div className="bg-muted rounded-lg overflow-hidden border">
+            <img
+              src="/SyntaxThreads-WarriorSeries-Mockups/Mockups/Python Warrior Premium Mockups/Person Back Python Warrior Premium.jpeg"
+              alt="Python Warrior Premium T-shirt - Premium developer apparel"
+              className="w-full h-96 object-cover"
+              loading="eager"
+            />
           </div>
           
           {/* Badge */}
           <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">
             Premium Quality
+          </div>
+          
+          {/* Code footnote */}
+          <div className="mt-4 text-center">
+            <div className="font-mono text-xs text-muted-foreground opacity-70">
+              class Developer: def wear_style(self): return "SyntaxThreadsCo"
+            </div>
           </div>
         </div>
       </div>

@@ -48,12 +48,12 @@ export default function ImageCarousel({ images, alt, className = '' }: ImageCaro
 
   if (validImages.length === 0) {
     return (
-      <div className={`relative w-full h-96 bg-gray-100 rounded-lg flex items-center justify-center ${className}`}>
+      <div className={`relative w-full h-96 bg-muted rounded-lg flex items-center justify-center ${className}`}>
         <div className="text-center">
-          <div className="font-mono text-2xl font-bold text-gray-800 mb-2">
+          <div className="font-mono text-2xl font-bold text-foreground mb-2">
             {alt.split(' ')[0]}
           </div>
-          <p className="text-sm text-gray-600">WARRIOR</p>
+          <p className="text-sm text-muted-foreground">WARRIOR</p>
         </div>
       </div>
     );
@@ -62,7 +62,7 @@ export default function ImageCarousel({ images, alt, className = '' }: ImageCaro
   return (
     <div className={`relative w-full ${className}`}>
       {/* Main image display */}
-      <div className="relative w-full h-96 lg:h-[500px] bg-gray-100 rounded-lg overflow-hidden">
+      <div className="relative w-full h-96 lg:h-[500px] bg-muted rounded-lg overflow-hidden">
         {validImages.map((image, index) => (
           <div
             key={image}
@@ -71,9 +71,9 @@ export default function ImageCarousel({ images, alt, className = '' }: ImageCaro
             }`}
           >
             {!loadedImages.has(index) && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+              <div className="absolute inset-0 flex items-center justify-center bg-muted">
                 <div className="animate-pulse">
-                  <div className="font-mono text-xl font-bold text-gray-600">Loading...</div>
+                  <div className="font-mono text-xl font-bold text-muted-foreground">Loading...</div>
                 </div>
               </div>
             )}
@@ -94,7 +94,7 @@ export default function ImageCarousel({ images, alt, className = '' }: ImageCaro
             <Button
               variant="outline"
               size="sm"
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-background/90 hover:bg-background"
               onClick={goToPrevious}
             >
               <ChevronLeft className="h-4 w-4" />
@@ -102,7 +102,7 @@ export default function ImageCarousel({ images, alt, className = '' }: ImageCaro
             <Button
               variant="outline"
               size="sm"
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-background/90 hover:bg-background"
               onClick={goToNext}
             >
               <ChevronRight className="h-4 w-4" />
@@ -128,7 +128,7 @@ export default function ImageCarousel({ images, alt, className = '' }: ImageCaro
               className={`flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 rounded-lg overflow-hidden border-2 transition-all ${
                 index === currentIndex
                   ? 'border-primary scale-105'
-                  : 'border-gray-200 hover:border-gray-300'
+                  : 'border-border hover:border-muted-foreground'
               }`}
             >
               <img

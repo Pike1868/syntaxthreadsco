@@ -18,7 +18,7 @@ export default function Footer() {
                 className="h-8 w-auto mb-4 dark:block hidden" 
               />
               <img 
-                src="/syntaxthreads-original-logo2.png"
+                src="/syntaxthreads-dark-logo2.png"
                 alt="SyntaxThreadsCo Logo" 
                 className="h-8 w-auto mb-4 dark:hidden block" 
               />
