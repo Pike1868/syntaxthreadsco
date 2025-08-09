@@ -1,5 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
+import ImageCarousel from './ImageCarousel';
+
+const heroImages = [
+  '/images/hero-carousel/csharp-back-black.webp',
+  '/images/hero-carousel/java-back-black.webp',
+  '/images/hero-carousel/python-back-black.webp',
+  '/images/hero-carousel/rust-back-black.webp',
+  '/images/hero-carousel/typescript-back-black.webp',
+];
 
 export default function Hero() {
   return (
@@ -37,28 +46,7 @@ export default function Hero() {
 
       {/* Hero Visual */}
       <div className="hidden lg:block">
-        <div className="relative">
-          <div className="bg-muted rounded-lg overflow-hidden border">
-            <img
-              src="/SyntaxThreads-WarriorSeries-Mockups/Mockups/Python Warrior Premium Mockups/Person Back Python Warrior Premium.jpeg"
-              alt="Python Warrior Premium T-shirt - Premium developer apparel"
-              className="w-full h-96 object-cover"
-              loading="eager"
-            />
-          </div>
-          
-          {/* Badge */}
-          <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">
-            Premium Quality
-          </div>
-          
-          {/* Code footnote */}
-          <div className="mt-4 text-center">
-            <div className="font-mono text-xs text-muted-foreground opacity-70">
-              class Developer: def wear_style(self): return "SyntaxThreadsCo"
-            </div>
-          </div>
-        </div>
+        <ImageCarousel images={heroImages} alt="Premium Warrior T-shirts" />
       </div>
     </div>
   );
