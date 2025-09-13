@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { posts } from '@/blog/registry';
+import { getDiversifiedCover } from '@/blog/covers';
 import NewsletterForm from '@/components/NewsletterForm';
 
 export default function Blog() {
@@ -24,7 +25,7 @@ export default function Blog() {
           >
             {meta.cover && (
               <div className="h-44 w-full overflow-hidden">
-                <img src={meta.cover} alt="Cover" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
+                <img src={getDiversifiedCover(meta)} alt="Cover" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
               </div>
             )}
             <div className="p-5 flex items-center justify-between text-xs text-muted-foreground">
