@@ -12,7 +12,7 @@ export const PERSONAS: Record<Persona, PersonaInfo> = {
     display: 'Monty Python',
     initials: 'MP',
     avatar: undefined,
-    blurb: 'Practical, calm, readability-first. A wink of Monty humor—always clear, never fussy.'
+    blurb: 'Practical, calm, readability-first. A wink of Monty humor—always clear and approachable.'
   },
   'Typey Tim': {
     display: 'Typey Tim',
