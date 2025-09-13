@@ -1,3 +1,15 @@
 {
-  "recent": []
+  "recent": [
+    {
+      "title": "Python's Quest for the Holy Grail of Readability",
+      "excerpt": "A look at how Python's emphasis on readability emerged from its ABC language roots, and why 'beautiful is better than ugly' became a guiding principle of the language.",
+      "slug": "2025-09-13-pythons-quest-for-the-holy-grail-of-readability",
+      "tags": [
+        "python",
+        "programming history",
+        "language design",
+        "software philosophy"
+      ]
+    }
+  ]
 }
