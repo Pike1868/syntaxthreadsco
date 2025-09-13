@@ -20,30 +20,43 @@ export const meta = {
 export const Content = () => (
   <div className="prose prose-neutral dark:prose-invert">
     <p>
-      Python likes clarity. Let’s set up a few simple building blocks: names, numbers, and strings.
-      Nothing fancy — just the essentials that make real code possible.
+      Python’s first win is clarity. Before classes and frameworks, you’ll spend most time with variables, numbers,
+      and strings. This quick tour sets habits that scale: meaningful names, small steps, and readable formatting.
     </p>
+
     <h2>Names and assignment</h2>
+    <p>
+      Variables are created by assignment. No type annotations required—Python infers types at runtime—but you can add
+      hints later as your projects grow.
+    </p>
     <pre><code>{`count = 3
-name = 'Ada'
-ratio = 3.14`}</code></pre>
+name = "Ada"
+ratio = 3.14
+
+# Optional type hints (helpful in larger codebases)
+user_id: int = 42
+greeting: str = f"Hello, {name}!"`}</code></pre>
     <p>
-      No type declarations. Readability first. Python infers the type and moves on with its day.
+      Stick to <em>lowercase_with_underscores</em> for variable names and choose verbs/nouns that explain intent. Future‑you will
+      thank present‑you.
     </p>
+
     <h2>Numbers and strings</h2>
+    <p>
+      Numeric operations behave as you expect, and f‑strings keep output tidy without awkward <code>"%s"</code> formatting.
+    </p>
     <pre><code>{`total = count * 2  # 6
-label = f"Hello, {name}!"`}</code></pre>
-    <p>
-      f-strings keep formatting tidy. You’ll reach for them a lot.
-    </p>
-    <h2>Small habit: naming</h2>
-    <p>
-      Use lowercase_with_underscores for variables. Future-you — and teammates — will thank you.
-    </p>
-    <hr />
-    <p className="text-sm text-muted-foreground">
-      Like the calm approach? See the Python Warrior Premium — durable, comfortable, shipping quickly.
-    </p>
+label = f"Hello, {name}!"  # 'Hello, Ada!'
+
+# String methods read like English
+clean = label.strip().lower().replace("hello", "hi")`}</code></pre>
+
+    <h2>Small habits that scale</h2>
+    <ul>
+      <li><strong>One idea per variable:</strong> avoid reusing names for different meanings.</li>
+      <li><strong>Prefer f‑strings:</strong> they’re faster to read and safer than manual concatenation.</li>
+      <li><strong>Type hints as projects grow:</strong> add them when modules stabilize; they’re optional, not mandatory.</li>
+    </ul>
   </div>
 );
 

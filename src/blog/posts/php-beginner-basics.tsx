@@ -20,24 +20,25 @@ export const meta = {
 export const Content = () => (
   <div className="prose prose-neutral dark:prose-invert">
     <p>
-      PHP ships fast. Let’s start with a single file and a single idea.
+      PHP is the web’s pragmatic toolkit. You can get something real on screen with a single file, then grow into
+      routing, templating, and frameworks when you’re ready. Start with the smallest useful step.
     </p>
+
     <h2>Hello, server</h2>
     <pre><code>{`<?php
 echo "Hello, SyntaxThreadsCo!";
 ?>`}</code></pre>
     <p>
-      Save as <code>index.php</code>, drop it into your local server, and you’re live.
+      Save as <code>index.php</code> in your web root, hit it in a browser, and you’re live. No build step required.
     </p>
+
     <h2>Variables and strings</h2>
     <pre><code>{`$name = 'Ada';
-echo "Hi, $name";`}</code></pre>
+echo "Hi, $name";            // interpolation
+echo 'Length: ' . strlen($name); // concatenation + built-in`}</code></pre>
     <p>
-      Interpolation is straightforward. Keep it readable, keep it simple.
-    </p>
-    <hr />
-    <p className="text-sm text-muted-foreground">
-      Building the basics? The PHP Warrior Premium keeps it minimal and comfortable while you ship.
+      PHP’s standard library is practical and extensive. Learn a few built‑ins (like <code>strlen</code>, <code>json_encode</code>,
+      and <code>array_map</code>) and you can accomplish a lot without dependencies.
     </p>
   </div>
 );

@@ -20,21 +20,32 @@ export const meta = {
 export const Content = () => (
   <div className="prose prose-neutral dark:prose-invert">
     <p>
-      TypeScript protects your future self. Start with the basics: primitives and objects. No ceremony, just clarity.
+      TypeScript’s promise is simple: make what you meant explicit. Start with primitives, then model small objects.
+      You get better editor hints now and far fewer surprises later.
     </p>
+
     <h2>Primitives and objects</h2>
     <pre><code>{`let count: number = 3;
 let name: string = 'Ada';
-let person: { name: string; active: boolean } = { name: 'Ada', active: true };`}</code></pre>
+let active: boolean = true;
+
+let person: { name: string; active: boolean } = { name, active };`}</code></pre>
+    <p>
+      Inline object types are fine for quick sketches, but a name (alias) turns a shape into a reusable contract.
+    </p>
+
     <h2>Type aliases</h2>
     <pre><code>{`type Person = { name: string; active: boolean };
-const p: Person = { name: 'Lin', active: false };`}</code></pre>
+
+function toggle(p: Person): Person {
+  return { ...p, active: !p.active };
+}
+
+const lin: Person = { name: 'Lin', active: false };
+const flipped = toggle(lin);`}</code></pre>
     <p>
-      Aliases keep intent obvious. Use them early and often.
-    </p>
-    <hr />
-    <p className="text-sm text-muted-foreground">
-      Building confidently? See the TypeScript Warrior Premium — minimal design, quality build.
+      Aliases are your most common tool; save interfaces for declaration merging or library surfaces. Keep property
+      names literal and avoid over‑generic shapes at the start.
     </p>
   </div>
 );
