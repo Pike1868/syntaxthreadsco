@@ -1,0 +1,40 @@
+{
+  "rotation": ["Python Warrior", "TypeScript Strategist", "PHP Builder"],
+  "cursor": 0,
+  "personas": {
+    "Python Warrior": {
+      "cover": "/images/blog/covers/cover-python.svg",
+      "modules": [
+        { "category": "history", "title": "Origins & Philosophy", "hint": "Why Python emphasizes readability; ABC roots; timeline highlights." },
+        { "category": "foundations", "title": "Variables, Types, and Naming", "hint": "Practical intro with f-strings and conventions." },
+        { "category": "foundations", "title": "Control Flow & Functions", "hint": "if/else, loops, def, return; practical patterns." },
+        { "category": "advanced", "title": "Iterators & Generators", "hint": "yield, comprehension patterns; when to use." },
+        { "category": "frameworks", "title": "Web with Flask", "hint": "Tiny app, routing, templates; when to pick Flask." }
+      ],
+      "cursor": 0
+    },
+    "TypeScript Strategist": {
+      "cover": "/images/blog/covers/cover-typescript.svg",
+      "modules": [
+        { "category": "history", "title": "Why TypeScript", "hint": "JS scale problems; types as contracts; ecosystem." },
+        { "category": "foundations", "title": "Everyday Types", "hint": "primitives, objects, type aliases with examples." },
+        { "category": "foundations", "title": "Functions & Narrowing", "hint": "guards, unions, control flow analysis." },
+        { "category": "advanced", "title": "Generics without Pain", "hint": "type params, constraints, good defaults." },
+        { "category": "frameworks", "title": "React + TS Patterns", "hint": "props, discriminated unions, hooks typing." }
+      ],
+      "cursor": 0
+    },
+    "PHP Builder": {
+      "cover": "/images/blog/covers/cover-php.svg",
+      "modules": [
+        { "category": "history", "title": "From Personal Home Page to Modern PHP", "hint": "How PHP evolved; 7.x and 8.x changes." },
+        { "category": "foundations", "title": "Syntax & First Script", "hint": "variables, strings, echo; short practical demo." },
+        { "category": "foundations", "title": "Functions & Arrays", "hint": "associative arrays, foreach, built-ins." },
+        { "category": "advanced", "title": "OOP Basics in PHP", "hint": "classes, namespaces, autoloading basics." },
+        { "category": "frameworks", "title": "Laravel in 5 Minutes", "hint": "routes, controllers, blade; where it shines." }
+      ],
+      "cursor": 0
+    }
+  }
+}
+
