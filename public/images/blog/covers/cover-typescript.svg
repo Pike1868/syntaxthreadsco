@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="100%" stop-color="#121a2e"/>
+    </linearGradient>
+    <linearGradient id="lines" x1="0" x2="1" y1="1" y2="0">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <g fill="none" stroke="url(#lines)" stroke-width="1.5">
+    <path d="M0,520 C180,470 260,540 420,520 C600,496 700,560 900,520 C1060,488 1130,540 1200,520"/>
+    <path d="M0,470 C180,430 260,490 420,470 C600,446 700,510 900,470 C1060,438 1130,490 1200,470"/>
+  </g>
+  <g fill="#60a5fa" opacity="0.5">
+    <rect x="160" y="120" width="8" height="8" rx="2"/>
+    <rect x="220" y="180" width="8" height="8" rx="2"/>
+    <rect x="1080" y="140" width="8" height="8" rx="2"/>
+  </g>
+  <g fill="#34d399" opacity="0.5">
+    <circle cx="980" cy="420" r="5"/>
+    <circle cx="1020" cy="380" r="4"/>
+    <circle cx="1060" cy="420" r="6"/>
+  </g>
+  <text x="60" y="520" fill="#cbd5e1" font-size="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" opacity="0.7">typescript • contracts • scale</text>
+</svg>

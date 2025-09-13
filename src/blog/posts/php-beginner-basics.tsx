@@ -7,7 +7,7 @@ export const meta = {
   excerpt: 'Spin up a tiny PHP script and print something real.',
   tags: ['php', 'beginners', 'basics'],
   persona: 'PHP Builder' as const,
-  cover: '/images/products/warrior-series/premium/generic/gallery/front-person-generic-closeup-black.webp',
+  cover: '/images/blog/covers/cover-php.svg',
 };
 
 export const Content = () => (

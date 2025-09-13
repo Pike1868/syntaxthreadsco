@@ -7,7 +7,7 @@ export const meta = {
   excerpt: 'A friendly intro to names, numbers, and strings — with zero drama.',
   tags: ['python', 'beginners', 'variables', 'types'],
   persona: 'Python Warrior' as const,
-  cover: '/images/hero-carousel/python-back-black.webp',
+  cover: '/images/blog/covers/cover-python.svg',
 };
 
 export const Content = () => (

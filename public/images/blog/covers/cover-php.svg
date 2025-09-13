@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="lines" x1="0" x2="1" y1="1" y2="0">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <g fill="none" stroke="url(#lines)" stroke-width="1.5">
+    <path d="M0,520 C200,480 260,540 420,520 C600,496 700,560 900,520 C1060,488 1130,540 1200,520"/>
+    <path d="M0,470 C200,430 260,490 420,470 C600,446 700,510 900,470 C1060,438 1130,490 1200,470"/>
+  </g>
+  <g fill="#a78bfa" opacity="0.6">
+    <circle cx="220" cy="140" r="6"/>
+    <circle cx="260" cy="200" r="4"/>
+    <circle cx="1100" cy="180" r="5"/>
+  </g>
+  <g fill="#f472b6" opacity="0.5">
+    <rect x="980" y="420" width="6" height="6" rx="1"/>
+    <rect x="1020" y="380" width="6" height="6" rx="1"/>
+    <rect x="1060" y="420" width="6" height="6" rx="1"/>
+  </g>
+  <text x="60" y="520" fill="#cbd5e1" font-size="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" opacity="0.7">php • ship • web-native</text>
+</svg>

@@ -47,13 +47,13 @@ export default function BlogPost() {
 
         <h1 className="display-heading text-3xl sm:text-4xl font-bold tracking-tight mt-3">{meta.title}</h1>
         {meta.cover && (
-          <div className="mt-6 overflow-hidden rounded-xl border border-border bg-muted">
-            <img src={meta.cover} alt="Cover" className="w-full h-64 object-cover" />
+          <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-muted">
+            <img src={meta.cover} alt="Cover" className="w-full h-72 md:h-80 object-cover" />
           </div>
         )}
       </header>
 
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-3xl blog-content">
         <Content />
       </div>
 

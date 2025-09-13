@@ -58,6 +58,26 @@
     font-family: var(--display-font);
     letter-spacing: -0.015em;
   }
+  .blog-content {
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+  .blog-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    font-size: 1.375rem;
+  }
+  .blog-content p { margin: 0.85rem 0; }
+  .blog-content pre {
+    background: hsl(var(--muted));
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.75rem;
+    padding: 0.85rem 1rem;
+    overflow: auto;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
 }
 
 @layer base {

@@ -7,7 +7,7 @@ export const meta = {
   excerpt: 'Practical types for real-world code — start small, win daily.',
   tags: ['typescript', 'beginners', 'types'],
   persona: 'TypeScript Strategist' as const,
-  cover: '/images/hero-carousel/typescript-back-black.webp',
+  cover: '/images/blog/covers/cover-typescript.svg',
 };
 
 export const Content = () => (
