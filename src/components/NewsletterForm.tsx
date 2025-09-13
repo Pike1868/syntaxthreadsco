@@ -33,6 +33,8 @@ export default function NewsletterForm({ compact = false }: { compact?: boolean 
     }
   }
 
+  if (!endpoint) return null;
+
   return (
     <form onSubmit={onSubmit} className={compact ? '' : 'rounded-xl border border-border p-4 md:p-6 bg-card'}>
       {!compact && (
@@ -58,12 +60,8 @@ export default function NewsletterForm({ compact = false }: { compact?: boolean 
           {loading ? 'Submitting…' : 'Subscribe'}
         </button>
       </div>
-      {!endpoint && (
-        <p className="mt-2 text-xs text-muted-foreground">Email capture not configured. Set VITE_FORMSPREE_ID in your environment.</p>
-      )}
       {status === 'ok' && <p className="mt-2 text-xs text-green-600">Thanks! Please check your inbox.</p>}
       {status === 'error' && <p className="mt-2 text-xs text-red-600">Something went wrong. Please try again.</p>}
     </form>
   );
 }
-

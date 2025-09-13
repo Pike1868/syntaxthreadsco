@@ -78,10 +78,12 @@ export default function BlogPost() {
         </div>
       </footer>
 
-      {/* Newsletter */}
-      <div className="mt-12 max-w-2xl mx-auto">
-        <NewsletterForm />
-      </div>
+      {/* Newsletter (render only if configured) */}
+      {import.meta.env.VITE_FORMSPREE_ID ? (
+        <div className="mt-12 max-w-2xl mx-auto">
+          <NewsletterForm />
+        </div>
+      ) : null}
     </article>
   );
 }
