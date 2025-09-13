@@ -7,7 +7,7 @@
     "Java the Hut",
     "Dotnet Dave"
   ],
-  "cursor": 0,
+  "cursor": 1,
   "personas": {
     "Monty Python": {
       "key": "python",
@@ -42,7 +42,7 @@
           "hint": "Tiny app, routing, templates; when to pick Flask."
         }
       ],
-      "cursor": 0
+      "cursor": 1
     },
     "Typey Tim": {
       "key": "typescript",
@@ -189,7 +189,7 @@
       "cover": "/images/blog/covers/cover-csharp.svg",
       "model": null,
       "temperature": 0.6,
-      "voice": "Modern .NET: expressive, productive, strongly typed\u2014with friendly commentary.",
+      "voice": "Modern .NET: expressive, productive, strongly typed—with friendly commentary.",
       "modules": [
         {
           "category": "history",
