@@ -8,6 +8,8 @@ import {
   About,
   Terms,
   Privacy,
+  Blog,
+  BlogPost,
 } from './pages';
 import { ErrorElement } from './components';
 
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
     {path:"products",element:<Products/>,errorElement:<ErrorElement/> },
     {path:"product/:id",element:<SingleProduct/>,errorElement:<ErrorElement/>},
     {path:"about",element:<About/>,errorElement:<ErrorElement/>},
+    {path:"blog",element:<Blog/>,errorElement:<ErrorElement/>},
+    {path:"blog/:slug",element:<BlogPost/>,errorElement:<ErrorElement/>},
     {path:"terms",element:<Terms/>,errorElement:<ErrorElement/>},
     {path:"privacy",element:<Privacy/>,errorElement:<ErrorElement/>},
   ]},
