@@ -87,7 +87,7 @@ Use these exact keys:
     .join('\n');
 
   const personaVoice = persona.voice || '';
-  const user = `Persona: ${personaName}\nPersona voice: ${personaVoice}\nModule: ${module.title} (${module.category})\nHint: ${module.hint}\nDo not repeat recent posts; build upon them.\nRecent posts:\n${memorySummary || '(none)'}\nConstraints: 800–1100 words, at least 1 reference, include 2–3 H2 headings, include 1 code block if relevant.`;
+  const user = `Persona: ${personaName}\nPersona voice: ${personaVoice}\nModule: ${module.title} (${module.category})\nHint: ${module.hint}\n\nIMPORTANT: This is part of a continuous ${personaName.split(' ')[1] || personaName} programming class series. Reference and build upon previous lessons when relevant. Help readers see how this topic connects to what they've learned before.\n\nRecent posts in this series:\n${memorySummary || '(none - this is the first lesson)'}\n\nConstraints: 800–1100 words, at least 1 reference, include 2–3 H2 headings, include 1 code block if relevant.`;
 
   const body = {
     model: personaModel,
