@@ -9,7 +9,7 @@ export default function Blog() {
     <div className="align-element py-16">
       {/* Hero */}
       <div className="rounded-2xl border border-border bg-gradient-to-br from-muted/60 via-card to-muted/60 p-8 md:p-12 text-center">
-        <h1 className="display-heading text-4xl font-bold tracking-tight">Code Academy</h1>
+        <h1 className="display-heading text-4xl font-bold tracking-tight">SyntaxThreads Journal</h1>
         <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
           Practical notes on Python, TypeScript, PHP, Rust, Java, and C# — clear, honest, and occasionally witty.
         </p>
