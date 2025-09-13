@@ -71,11 +71,13 @@ async function main() {
 Write a 5-minute technical blog post (~800–1100 words). Structure with: a short lead, 2–3 H2 sections, exactly one focused code block if relevant, and a References list with at least 1 credible link (prefer official docs).
 Tone: useful first, promotional second; avoid hype and clickbait. No product photos.
 
-CRITICAL: Your response MUST be valid JSON only. No text before or after. Start with { and end with }. Use these exact keys:
+CRITICAL: Your response MUST be valid JSON only. No text before or after. Start with { and end with }. 
+IMPORTANT: Properly escape all quotes and control characters in the HTML content. Use \\n for newlines, \\" for quotes.
+Use these exact keys:
 - title (string)
 - excerpt (string) 
 - tags (array of strings)
-- html (string containing the article body in HTML)
+- html (string containing the article body in HTML, properly escaped)
 - references (array of objects with title, url, source properties)`;
 
   const memorySummary = (memory.recent || [])
@@ -127,9 +129,10 @@ CRITICAL: Your response MUST be valid JSON only. No text before or after. Start 
     parsed = JSON.parse(content);
   } catch (e) {
     console.error('Failed to parse JSON content. Content length:', content.length);
+    console.error('Parse error:', e.message);
+    console.error('Character at error position:', content.charAt(e.message.match(/\d+/)?.[0] || 0));
     console.error('First 500 chars:', content.slice(0, 500));
     console.error('Last 500 chars:', content.slice(-500));
-    console.error('Parse error:', e.message);
     process.exit(1);
   }
 
