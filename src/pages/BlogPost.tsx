@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { posts, postsBySlug } from '@/blog/registry';
-import { getDiversifiedCover } from '@/blog/covers';
+import { getDiversifiedCover, getCoverOverlayClass } from '@/blog/covers';
 import { PERSONAS } from '@/blog/personas';
 import { Avatar, NewsletterForm } from '@/components';
 
@@ -50,8 +50,9 @@ export default function BlogPost() {
         <h1 className="display-heading text-3xl sm:text-4xl font-bold tracking-tight mt-3">{meta.title}</h1>
         <div className="mt-1 text-sm text-muted-foreground">By {PERSONAS[meta.persona].display}</div>
         {meta.cover && (
-          <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-muted">
+          <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-muted relative">
             <img src={getDiversifiedCover(meta)} alt="Cover" className="w-full h-72 md:h-80 object-cover" />
+            <div className={getCoverOverlayClass(meta)} />
           </div>
         )}
       </header>

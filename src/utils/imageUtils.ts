@@ -29,7 +29,10 @@ const getProductImagePaths = (product: Product, imageType: 'gallery' | 'thumbnai
     (file) => `${genericPath}/${file}`
   );
 
-  return [...productImages, ...genericImages];
+  // Deduplicate to avoid repeated files in UI carousels
+  const all = [...productImages, ...genericImages];
+  const unique = Array.from(new Set(all));
+  return unique;
 };
 
 export const getProductImages = (product: Product): string[] => {

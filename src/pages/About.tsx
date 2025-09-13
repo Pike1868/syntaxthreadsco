@@ -26,12 +26,13 @@ export default function About() {
         <div>
           <h2 className="display-heading text-3xl font-bold tracking-tight text-foreground">Our Story</h2>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            We’re developers who care about the details. We design shirts the same way we write code:
-            thoughtfully, iteratively, and with a bias for quality.
+            SyntaxThreadsCo started as a tiny developer project: a few designs we wanted to wear ourselves, made with
+            care and without gimmicks. We keep things simple—clean graphics, comfortable fabrics, prints that last—so
+            you can focus on what you build (and still look good at stand‑up).
           </p>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            The Warrior collection nods to the languages that move the world—Python, Java, Rust, TypeScript, and C#—
-            with quietly confident prints and comfortable fits.
+            We design in small batches, print with trusted partners, and ship quickly. If something misses the mark,
+            we make it right. No drama, no pressure, just straightforward gear for people who love to code.
           </p>
         </div>
 

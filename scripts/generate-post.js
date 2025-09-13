@@ -156,7 +156,7 @@ Output strictly as compact JSON with keys: title, excerpt, tags (array), html (a
     slug,
     date: dateISO,
     excerpt,
-    tags,
+    tags: Array.from(new Set([...(tags || []), module.category])),
     persona: personaName,
     cover,
     references,
