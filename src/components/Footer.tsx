@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
+import NewsletterForm from './NewsletterForm';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -83,6 +84,13 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="mt-12">
+          <div className="max-w-md">
+            <NewsletterForm />
           </div>
         </div>
 
