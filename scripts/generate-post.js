@@ -13,7 +13,8 @@ const registryPath = path.join(ROOT, 'src/blog/registry.ts');
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const OPENROUTER_REFERER = process.env.OPENROUTER_REFERER || 'https://www.syntaxthreads.com';
 const OPENROUTER_TITLE = process.env.OPENROUTER_TITLE || 'SyntaxThreadsCo';
-const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || 'openrouter/auto';
+// Default to a high-quality consistent model unless overridden
+const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || 'anthropic/claude-3.5-sonnet';
 const OPENROUTER_TEMPERATURE = process.env.OPENROUTER_TEMPERATURE || '0.6';
 
 if (!OPENROUTER_API_KEY) {
@@ -61,16 +62,18 @@ async function main() {
   const personaTemp = typeof persona.temperature === 'number' ? persona.temperature : Number(OPENROUTER_TEMPERATURE);
 
   // Build prompt
-  const system = `You are a brand writer for SyntaxThreadsCo. Voice is authentic, humble, lightly witty, developer-respectful. 
-Write a 5-minute technical blog post (~800–1100 words). Structure with: a short lead, 2–3 H2 sections, exactly one focused code block if relevant, and a References list with at least 1 credible link (prefer official docs). 
-Tone: useful first, promotional second; avoid hype and clickbait. No product photos. Output strictly as minified JSON with keys: title, excerpt, tags (array), html (article body in HTML), references (array of {title,url,source}).`;
+  const system = `You are a brand writer for SyntaxThreadsCo. Voice is authentic, humble, lightly witty, developer-respectful.
+Write a 5-minute technical blog post (~800–1100 words). Structure with: a short lead, 2–3 H2 sections, exactly one focused code block if relevant, and a References list with at least 1 credible link (prefer official docs).
+Tone: useful first, promotional second; avoid hype and clickbait. No product photos.
+Output strictly as compact JSON with keys: title, excerpt, tags (array), html (article body in HTML), references (array of {title,url,source}). Do not include any commentary before or after JSON.`;
 
   const memorySummary = (memory.recent || [])
     .slice(-3)
     .map((p) => `- ${p.title}: ${p.excerpt}`)
     .join('\n');
 
-  const user = `Persona: ${personaName}\nModule: ${module.title} (${module.category})\nHint: ${module.hint}\nDo not repeat recent posts; build upon them.\nRecent posts:\n${memorySummary || '(none)'}\nConstraints: 800–1100 words, at least 1 reference, include 2–3 H2 headings, include 1 code block if relevant.`;
+  const personaVoice = persona.voice || '';
+  const user = `Persona: ${personaName}\nPersona voice: ${personaVoice}\nModule: ${module.title} (${module.category})\nHint: ${module.hint}\nDo not repeat recent posts; build upon them.\nRecent posts:\n${memorySummary || '(none)'}\nConstraints: 800–1100 words, at least 1 reference, include 2–3 H2 headings, include 1 code block if relevant.`;
 
   const body = {
     model: personaModel,

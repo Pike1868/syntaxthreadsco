@@ -6,6 +6,9 @@
       "cover": "/images/blog/covers/cover-python.svg",
       "model": null,
       "temperature": 0.6,
+      "voice": "Practical, calm, readability-first. Prefers simple examples and ergonomics."
+      "model": null,
+      "temperature": 0.6,
       "modules": [
         { "category": "history", "title": "Origins & Philosophy", "hint": "Why Python emphasizes readability; ABC roots; timeline highlights." },
         { "category": "foundations", "title": "Variables, Types, and Naming", "hint": "Practical intro with f-strings and conventions." },
@@ -17,6 +20,9 @@
     },
     "TypeScript Strategist": {
       "cover": "/images/blog/covers/cover-typescript.svg",
+      "model": null,
+      "temperature": 0.6,
+      "voice": "Contract-first, scale-minded, product pragmatism. Emphasizes types as design."
       "model": null,
       "temperature": 0.6,
       "modules": [
@@ -32,6 +38,7 @@
       "cover": "/images/blog/covers/cover-php.svg",
       "model": null,
       "temperature": 0.6,
+      "voice": "Web-native pragmatism, ships fast, keeps things simple and readable."
       "modules": [
         { "category": "history", "title": "From Personal Home Page to Modern PHP", "hint": "How PHP evolved; 7.x and 8.x changes." },
         { "category": "foundations", "title": "Syntax & First Script", "hint": "variables, strings, echo; short practical demo." },
