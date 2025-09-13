@@ -31,7 +31,7 @@ export default function Blog() {
               <span className="inline-flex items-center rounded-full border border-border bg-background px-2 py-0.5">
                 {meta.persona}
               </span>
-              <span>{new Date(meta.date).toLocaleDateString()}</span>
+              <span>{new Date(meta.date).toLocaleDateString()} • ≈5 min read</span>
             </div>
             <div className="px-5 pb-5 flex-1">
               <h2 className="font-semibold text-foreground group-hover:text-muted-foreground text-lg">{meta.title}</h2>

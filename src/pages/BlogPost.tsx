@@ -23,6 +23,7 @@ export default function BlogPost() {
   const idx = sorted.findIndex(p => p.meta.slug === meta.slug);
   const prev = idx > 0 ? sorted[idx - 1] : undefined;
   const next = idx >= 0 && idx < sorted.length - 1 ? sorted[idx + 1] : undefined;
+  const alsoFromPersona = sorted.filter(p => p.meta.persona === meta.persona && p.meta.slug !== meta.slug).slice(0, 2);
 
   return (
     <article className="align-element py-16">
@@ -42,7 +43,7 @@ export default function BlogPost() {
               </div>
             ) : null}
           </div>
-          <div className="text-sm text-muted-foreground">{new Date(meta.date).toLocaleDateString()}</div>
+          <div className="text-sm text-muted-foreground">{new Date(meta.date).toLocaleDateString()} • ≈5 min read</div>
         </div>
 
         <h1 className="display-heading text-3xl sm:text-4xl font-bold tracking-tight mt-3">{meta.title}</h1>
@@ -93,6 +94,19 @@ export default function BlogPost() {
             ) : <span />}
           </div>
         </div>
+        {/* More from persona */}
+        {alsoFromPersona.length ? (
+          <div className="mt-6 text-sm">
+            <div className="text-muted-foreground mb-2">More from {meta.persona}:</div>
+            <ul className="list-disc list-inside space-y-1">
+              {alsoFromPersona.map(p => (
+                <li key={p.meta.slug}>
+                  <Link to={`/blog/${p.meta.slug}`} className="underline text-muted-foreground hover:text-foreground">{p.meta.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </footer>
 
       {/* Newsletter (render only if configured) */}
