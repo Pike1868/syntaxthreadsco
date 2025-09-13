@@ -1,65 +1,67 @@
 
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { Sparkles, ShieldCheck, Leaf, Code2 } from 'lucide-react';
+import ImageStrip from '@/components/ImageStrip';
 
 export default function About() {
   return (
-    <div className="align-element py-20">
+    <div className="align-element py-24 space-y-16">
+      {/* Hero */}
       <section className="text-center">
-        <h1 className="flex flex-wrap items-center justify-center gap-2 text-4xl font-bold leading-none tracking-wide sm:gap-x-6 sm:text-6xl">
-          Compile Your <span className="px-4 py-2 tracking-widest text-white rounded-lg bg-primary">Style</span>
+        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs text-muted-foreground">
+          <Code2 className="h-3.5 w-3.5" /> Built by devs, worn by devs
+        </div>
+        <h1 className="display-heading mt-4 text-4xl font-bold tracking-tight sm:text-6xl">
+          Clean code. Clean tees.
         </h1>
-        
-        <p className="max-w-2xl mx-auto mt-6 text-lg leading-8 tracking-wide text-muted-foreground">
-          Welcome to SyntaxThreadsCo, where technology meets fashion in a unique blend of style and substance. 
-          Born from a passion for clean code and clever design, our apparel celebrates the languages and tools 
-          that developers love most.
+        <p className="max-w-2xl mx-auto mt-6 text-lg leading-8 text-muted-foreground">
+          Minimalist apparel for people who ship. Authentic materials, considerate fits,
+          and a small wink now and then. No dark patterns—just dark tees.
         </p>
       </section>
 
-      <div className="mt-20 grid gap-16 lg:grid-cols-2 lg:gap-x-20">
+      <div className="grid gap-16 lg:grid-cols-2 lg:gap-x-20">
         {/* Our Story */}
         <div>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground">Our Story</h2>
+          <h2 className="display-heading text-3xl font-bold tracking-tight text-foreground">Our Story</h2>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Every developer knows the feeling of mastering a new language or solving a complex problem. 
-            That pride, that sense of accomplishment - we wanted to capture that in wearable form.
+            We’re developers who care about the details. We design shirts the same way we write code:
+            thoughtfully, iteratively, and with a bias for quality.
           </p>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            Our "Warrior" collection celebrates the languages that power our digital world: Python, Java, 
-            Rust, TypeScript, and C#. Each design is crafted with the same attention to detail that goes 
-            into writing clean, efficient code.
+            The Warrior collection nods to the languages that move the world—Python, Java, Rust, TypeScript, and C#—
+            with quietly confident prints and comfortable fits.
           </p>
         </div>
 
-        {/* Quality Promise */}
+        {/* Promise */}
         <div>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground">Quality Promise</h2>
-          <div className="mt-6 space-y-4 text-lg leading-8 text-muted-foreground">
-            <div className="flex items-start">
-              <span className="font-mono text-primary mr-3">•</span>
-              <p>Premium cotton blends for maximum comfort during long coding sessions</p>
+          <h2 className="display-heading text-3xl font-bold tracking-tight text-foreground">Our Promise</h2>
+          <div className="mt-6 grid gap-4">
+            <div className="rounded-lg border border-border bg-card p-5 flex items-start gap-3">
+              <Sparkles className="h-5 w-5 text-primary" />
+              <p className="text-lg leading-7 text-muted-foreground">Minimalist, tasteful designs that work at meetups, conferences, or coffee shops.</p>
             </div>
-            <div className="flex items-start">
-              <span className="font-mono text-primary mr-3">•</span>
-              <p>Minimalist designs that look great in the office or at conferences</p>
+            <div className="rounded-lg border border-border bg-card p-5 flex items-start gap-3">
+              <ShieldCheck className="h-5 w-5 text-primary" />
+              <p className="text-lg leading-7 text-muted-foreground">Durable construction and consistent quality—made to survive refactors and laundry cycles.</p>
             </div>
-            <div className="flex items-start">
-              <span className="font-mono text-primary mr-3">•</span>
-              <p>Durable construction that withstands countless wash cycles</p>
-            </div>
-            <div className="flex items-start">
-              <span className="font-mono text-primary mr-3">•</span>
-              <p>Available in Classic and Premium fits to suit your style</p>
+            <div className="rounded-lg border border-border bg-card p-5 flex items-start gap-3">
+              <Leaf className="h-5 w-5 text-primary" />
+              <p className="text-lg leading-7 text-muted-foreground">Comfort-first materials (100% carded cotton core) with a clean, modern fit.</p>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Image strip for breathing room */}
+      <ImageStrip />
+
       {/* Values Section */}
-      <div className="mt-20 bg-muted rounded-lg p-8 lg:p-12">
+      <div className="bg-muted/60 rounded-lg p-8 lg:p-12">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground">Why We Code</h2>
+          <h2 className="display-heading text-3xl font-bold tracking-tight text-foreground">Why We Code</h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
             We believe that developers are the modern-day architects of our digital future. 
             Every line of code shapes the world we live in, and every developer deserves 
@@ -69,31 +71,29 @@ export default function About() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
           <div className="text-center">
-            <div className="font-mono text-2xl font-bold text-primary mb-2">{'{ }'}</div>
+            <Sparkles className="h-6 w-6 text-primary mx-auto mb-2" />
             <h3 className="text-lg font-semibold text-foreground">Clean Design</h3>
             <p className="mt-2 text-muted-foreground">Like well-written code, our designs are elegant and purposeful.</p>
           </div>
           
           <div className="text-center">
-            <div className="font-mono text-2xl font-bold text-primary mb-2">{'<>'}</div>
+            <Code2 className="h-6 w-6 text-primary mx-auto mb-2" />
             <h3 className="text-lg font-semibold text-foreground">Community First</h3>
             <p className="mt-2 text-muted-foreground">Built by developers, for developers, celebrating our shared culture.</p>
           </div>
           
           <div className="text-center">
-            <div className="font-mono text-2xl font-bold text-primary mb-2">{'[]'}</div>
+            <ShieldCheck className="h-6 w-6 text-primary mx-auto mb-2" />
             <h3 className="text-lg font-semibold text-foreground">Quality Focused</h3>
-            <p className="mt-2 text-muted-foreground">No bugs in our products - just premium materials and craftsmanship.</p>
+            <p className="mt-2 text-muted-foreground">No bugs in our products — just premium materials and craftsmanship.</p>
           </div>
         </div>
       </div>
 
       {/* Call to Action */}
-      <div className="mt-20 text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-foreground">Ready to Code Your Style?</h2>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Join thousands of developers who wear their programming pride with SyntaxThreadsCo.
-        </p>
+      <div className="text-center">
+        <h2 className="display-heading text-3xl font-bold tracking-tight text-foreground">Ready to ship your look?</h2>
+        <p className="mt-4 text-lg text-muted-foreground">Subtle, comfortable, dev-approved. The rest is just deployment.</p>
         <div className="mt-8">
           <Link to="/products">
             <Button size="lg" className="px-8">

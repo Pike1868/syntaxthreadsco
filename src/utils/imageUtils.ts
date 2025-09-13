@@ -17,7 +17,8 @@ const getProductImagePaths = (product: Product, imageType: 'gallery' | 'thumbnai
 
   const genericImageFiles = {
     classic: ['back-shirt-only-black.webp', 'back-person-1-black.webp', 'back-person-2-black.webp'],
-    premium: ['front-generic-black-shirt-only.jpeg', 'front-person-generic-black.jpeg', 'front-person-generic-closeup-black.jpeg'],
+    // Use actual filenames present in public assets (webp variants)
+    premium: ['front-generic-black.webp', 'front-person-black.webp', 'front-person-generic-closeup-black.webp'],
   };
 
   const productImages = specificImageFiles[fit.toLowerCase() as keyof typeof specificImageFiles].map(

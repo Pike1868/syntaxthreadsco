@@ -94,7 +94,7 @@ export default function Footer() {
             </div>
             
             <div className="text-muted-foreground text-sm">
-              Made with <span className="text-primary">♥</span> for developers
+              Made with <span className="text-primary">♥</span> for developers — no dark patterns, just good tees.
             </div>
           </div>
         </div>

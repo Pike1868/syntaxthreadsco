@@ -6,6 +6,8 @@ import {
   Products,
   SingleProduct,
   About,
+  Terms,
+  Privacy,
 } from './pages';
 import { ErrorElement } from './components';
 
@@ -18,6 +20,8 @@ const router = createBrowserRouter([
     {path:"products",element:<Products/>,errorElement:<ErrorElement/> },
     {path:"product/:id",element:<SingleProduct/>,errorElement:<ErrorElement/>},
     {path:"about",element:<About/>,errorElement:<ErrorElement/>},
+    {path:"terms",element:<Terms/>,errorElement:<ErrorElement/>},
+    {path:"privacy",element:<Privacy/>,errorElement:<ErrorElement/>},
   ]},
 ])
 

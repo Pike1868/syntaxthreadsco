@@ -24,6 +24,7 @@
     --input: 0 0% 89%;
     --ring: 0 84% 40%;
     --radius: 0.5rem;
+    --display-font: ui-sans-serif, system-ui, -apple-system, "SF Pro Display", "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
   }
 
   .dark {
@@ -51,7 +52,11 @@
 
 @layer components {
   .align-element {
-    @apply max-w-6xl px-8 mx-auto;
+    @apply max-w-7xl px-6 md:px-8 mx-auto;
+  }
+  .display-heading {
+    font-family: var(--display-font);
+    letter-spacing: -0.015em;
   }
 }
 

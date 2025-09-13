@@ -1,14 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getProductImages, getPlaceholderImage } from '@/utils/imageUtils';
+import { formatCurrency } from '@/utils';
 import productData from '@/data/products.json';
+import { Button } from '@/components/ui/button';
+import { Leaf, ShieldCheck } from 'lucide-react';
 
 export default function ProductsGrid() {
   const { products } = productData;
+  // Only show Premium fit products on the listing page
+  const visibleProducts = (products as import('@/types/product').Product[]).filter(
+    (p) => p.fit !== 'Classic'
+  );
 
   return (
     <div className="pt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {(products as import('@/types/product').Product[]).map((product) => {
+      {visibleProducts.map((product) => {
         return <ProductCard key={product.listingId || product.title} product={product} />;
       })}
     </div>
@@ -42,30 +49,37 @@ function ProductCard({ product }: { product: import('@/types/product').Product }
   
   const currentImage = validImages[currentImageIndex];
   
+  const openEtsy = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    window.open(product.etsyUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <Link to={`/product/${productId}`}>
-      <article className="group cursor-pointer">
-        <div className="relative rounded-lg bg-muted h-64 overflow-hidden">
-          <img 
+    <article className="group cursor-pointer rounded-xl border border-border overflow-hidden bg-card hover:shadow-sm transition-shadow">
+      <Link to={`/product/${productId}`} className="block">
+        <div className="relative bg-muted h-64">
+          <img
             src={currentImage}
             alt={title}
             className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
             loading="lazy"
           />
-          {/* Overlay with product info */}
-          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <div className="text-center text-white">
-              <h3 className="font-mono text-xl font-bold mb-1">
-                {language}
-              </h3>
-              <p className="text-sm">WARRIOR</p>
-              <p className="text-xs mt-1">{fit} Fit</p>
+
+          {/* Overlay with product info + CTA */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-3">
+            <div className="text-white">
+              <h3 className="font-mono text-lg font-bold leading-none">{language}</h3>
+              <p className="text-[11px] opacity-80 mt-1">WARRIOR • {fit} Fit</p>
             </div>
+            <Button size="sm" onClick={openEtsy} className="bg-white text-black hover:bg-white/90">
+              Buy on Etsy
+            </Button>
           </div>
-          
-          {/* Image indicator dots - only show if multiple images */}
+
+          {/* Image indicator dots */}
           {validImages.length > 1 && (
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-1">
               {validImages.map((_, index) => (
                 <div
                   key={index}
@@ -77,16 +91,30 @@ function ProductCard({ product }: { product: import('@/types/product').Product }
             </div>
           )}
         </div>
-        
-        <div className="mt-4 space-y-2">
-          <h3 className="text-sm font-medium text-foreground group-hover:text-muted-foreground">
-            {title}
-          </h3>
-          <p className="text-lg font-semibold text-foreground">
-            ${basePrice.toFixed(2)} {currency}
+      </Link>
+
+      <div className="px-3 py-4">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <h3 className="text-sm font-medium text-foreground hover:text-muted-foreground">
+              {title}
+            </h3>
+            <p className="text-xs text-muted-foreground">{fit} • {language}</p>
+          </div>
+          <p className="text-base font-semibold text-foreground whitespace-nowrap">
+            {formatCurrency(basePrice, currency)}
           </p>
         </div>
-      </article>
-    </Link>
+        {/* Mini highlights */}
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          <span className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-2.5 py-0.5 text-[10px] text-muted-foreground">
+            <Leaf className="h-3 w-3 text-primary" /> 100% cotton
+          </span>
+          <span className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-2.5 py-0.5 text-[10px] text-muted-foreground">
+            <ShieldCheck className="h-3 w-3 text-primary" /> Quality build
+          </span>
+        </div>
+      </div>
+    </article>
   );
 }

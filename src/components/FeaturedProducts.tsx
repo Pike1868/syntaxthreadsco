@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
+import { Leaf, ShieldCheck } from 'lucide-react';
+import { formatCurrency } from '@/utils';
 import { SectionTitle } from '.';
 import { getProductImages, getPlaceholderImage } from '@/utils/imageUtils';
 import productData from '@/data/products.json';
@@ -12,10 +14,8 @@ export default function FeaturedProducts() {
   
   // All available products grouped by fit type
   const allProducts = productData.products as import('@/types/product').Product[];
-  const classicProducts = allProducts.filter(p => p.fit === 'Classic');
-  const premiumProducts = allProducts.filter(p => p.fit === 'Premium');
-  // Arrange so all classics come first, then all premiums
-  const orderedProducts = [...classicProducts, ...premiumProducts];
+  // Only feature Premium products
+  const orderedProducts = allProducts.filter(p => p.fit === 'Premium');
   
   // Get 4 products starting from startIndex, wrapping around if needed
   const getFeaturedProducts = () => {
@@ -31,7 +31,7 @@ export default function FeaturedProducts() {
 
   // Auto-rotate through products every 6 seconds (pause on hover)
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || orderedProducts.length === 0) return;
     
     const interval = setInterval(() => {
       setStartIndex((prev) => (prev + 1) % orderedProducts.length);
@@ -42,7 +42,7 @@ export default function FeaturedProducts() {
 
   // Sync all product images to cycle together every 4 seconds (pause on hover)
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || orderedProducts.length === 0) return;
     
     const interval = setInterval(() => {
       // Cycle through max 3 images (most products have 2-4 images)
@@ -50,7 +50,7 @@ export default function FeaturedProducts() {
     }, 4000);
     
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, orderedProducts.length]);
 
   return (
     <div className="pt-24">
@@ -150,15 +150,22 @@ function FeaturedProductCard({
             </div>
           )}
           
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <div className="text-center text-white">
-              <h3 className="font-mono text-lg font-bold">
-                {language}
-              </h3>
-              <p className="text-sm mt-1">WARRIOR</p>
-              <p className="text-xs mt-1">{fit} Fit</p>
+          {/* Hover overlay with CTA */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-3">
+            <div className="text-white">
+              <h3 className="font-mono text-lg font-bold">{language}</h3>
+              <p className="text-xs opacity-80">WARRIOR • {fit}</p>
             </div>
+            <Button
+              size="sm"
+              className="bg-white text-black hover:bg-white/90"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(product.etsyUrl, '_blank', 'noopener,noreferrer');
+              }}
+            >
+              Buy on Etsy
+            </Button>
           </div>
         </div>
         
@@ -168,8 +175,17 @@ function FeaturedProductCard({
           </h3>
           <p className="text-xs text-muted-foreground mb-1">{fit} Fit</p>
           <p className="text-lg font-semibold text-foreground">
-            ${basePrice.toFixed(2)}
+            {formatCurrency(basePrice, 'USD')}
           </p>
+          {/* Mini highlights */}
+          <div className="mt-2 flex items-center justify-center gap-1.5">
+            <span className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-2.5 py-0.5 text-[10px] text-muted-foreground">
+              <Leaf className="h-3 w-3 text-primary" /> Cotton
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-2.5 py-0.5 text-[10px] text-muted-foreground">
+              <ShieldCheck className="h-3 w-3 text-primary" /> Made well
+            </span>
+          </div>
         </div>
       </article>
     </Link>
