@@ -1,6 +1,12 @@
 import { ReactNode } from 'react';
 
-export type Persona = 'Python Warrior' | 'TypeScript Strategist' | 'PHP Builder';
+export type Persona =
+  | 'Python Warrior'
+  | 'TypeScript Strategist'
+  | 'PHP Builder'
+  | 'Rust Warrior'
+  | 'Java Warrior'
+  | 'C# Warrior';
 
 export interface PostMeta {
   title: string;

@@ -22,5 +22,19 @@ export const PERSONAS: Record<Persona, PersonaInfo> = {
     initials: 'PHP',
     avatar: undefined,
   },
+  'Rust Warrior': {
+    display: 'Rust Warrior',
+    initials: 'RS',
+    avatar: undefined,
+  },
+  'Java Warrior': {
+    display: 'Java Warrior',
+    initials: 'JV',
+    avatar: undefined,
+  },
+  'C# Warrior': {
+    display: 'C# Warrior',
+    initials: 'C#',
+    avatar: undefined,
+  },
 };
-

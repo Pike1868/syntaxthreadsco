@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0e0f1a"/>
+      <stop offset="100%" stop-color="#181b2d"/>
+    </linearGradient>
+    <linearGradient id="lines" x1="0" x2="1" y1="1" y2="0">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <g fill="none" stroke="url(#lines)" stroke-width="1.5">
+    <path d="M0,520 C180,470 260,540 420,520 C600,496 700,560 900,520 C1060,488 1130,540 1200,520"/>
+    <path d="M0,470 C180,430 260,490 420,470 C600,446 700,510 900,470 C1060,438 1130,490 1200,470"/>
+  </g>
+  <g fill="#8b5cf6" opacity="0.6">
+    <circle cx="220" cy="160" r="5"/>
+    <circle cx="1000" cy="200" r="4"/>
+  </g>
+  <text x="60" y="520" fill="#cbd5e1" font-size="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" opacity="0.7">c# • .net • modern</text>
+</svg>

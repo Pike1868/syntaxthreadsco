@@ -51,7 +51,12 @@ async function main() {
   const personaIdx = personas.cursor % rotation.length;
   const personaName = rotation[personaIdx];
   const persona = personas.personas[personaName];
-  const personaMemoryPath = path.join(memoryDir, `${personaName.split(' ')[0].toLowerCase()}.json`);
+  const safeKey = (persona.key || personaName)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .split('-')[0];
+  const personaMemoryPath = path.join(memoryDir, `${safeKey}.json`);
   const memory = readJson(personaMemoryPath);
 
   const moduleIdx = persona.cursor % persona.modules.length;
@@ -125,6 +130,9 @@ Output strictly as compact JSON with keys: title, excerpt, tags (array), html (a
     'Python Warrior': ['python.org', 'docs.python.org', 'peps.python.org'],
     'TypeScript Strategist': ['typescriptlang.org', 'www.typescriptlang.org', 'tc39.es', 'nodejs.org'],
     'PHP Builder': ['php.net', 'www.php.net'],
+    'Rust Warrior': ['rust-lang.org', 'doc.rust-lang.org'],
+    'Java Warrior': ['docs.oracle.com', 'openjdk.org'],
+    'C# Warrior': ['learn.microsoft.com', 'docs.microsoft.com', 'dotnet.microsoft.com'],
   };
   const allowed = DOMAIN_ALLOWLIST[personaName] || [];
   const hasCredible = references.some(r => allowed.some(domain => hostname(r.url).endsWith(domain)));
