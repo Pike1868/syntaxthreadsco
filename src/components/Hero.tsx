@@ -21,7 +21,7 @@ export default function Hero() {
 
         <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
           Premium shirts for people who build things on the internet. Minimalist designs,
-          honest quality, and a wink here and there. No dark patterns—just dark tees.
+          honest quality, and subtle humor here and there. No dark patterns—just dark tees.
         </p>
 
         <div className="mt-8 flex items-center gap-x-4">

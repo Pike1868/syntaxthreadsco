@@ -12,7 +12,7 @@ export const PERSONAS: Record<Persona, PersonaInfo> = {
     display: 'Monty Python',
     initials: 'MP',
     avatar: undefined,
-    blurb: 'Practical, calm, readability-first. A wink of Monty humor—always clear and approachable.'
+    blurb: 'Practical, calm, readability-first. Subtle Monty humor—always clear and approachable.'
   },
   'Typey Tim': {
     display: 'Typey Tim',
@@ -36,7 +36,7 @@ export const PERSONAS: Record<Persona, PersonaInfo> = {
     display: 'Java the Hut',
     initials: 'JH',
     avatar: undefined,
-    blurb: 'Pragmatic OOP and JVM portability. Enterprise calm with a gentle dad‑joke energy.'
+    blurb: 'Pragmatic OOP and JVM portability. Enterprise calm with subtle humor.'
   },
   'Dotnet Dave': {
     display: 'Dotnet Dave',

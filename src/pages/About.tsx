@@ -17,7 +17,7 @@ export default function About() {
         </h1>
         <p className="max-w-2xl mx-auto mt-6 text-lg leading-8 text-muted-foreground">
           Minimalist apparel for people who ship. Authentic materials, considerate fits,
-          and a small wink now and then. No dark patterns—just dark tees.
+          and subtle humor now and then. No dark patterns—just dark tees.
         </p>
       </section>
 

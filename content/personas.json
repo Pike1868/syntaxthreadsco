@@ -14,7 +14,7 @@
       "cover": "/images/blog/covers/cover-python.svg",
       "model": null,
       "temperature": 0.6,
-      "voice": "Practical, calm, readability-first. A wink of Monty humor.",
+      "voice": "Practical, calm, readability-first. Subtle Monty humor.",
       "modules": [
         {
           "category": "history",
