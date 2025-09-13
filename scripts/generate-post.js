@@ -70,7 +70,13 @@ async function main() {
   const system = `You are a brand writer for SyntaxThreadsCo. Voice is authentic, humble, lightly witty, developer-respectful.
 Write a 5-minute technical blog post (~800–1100 words). Structure with: a short lead, 2–3 H2 sections, exactly one focused code block if relevant, and a References list with at least 1 credible link (prefer official docs).
 Tone: useful first, promotional second; avoid hype and clickbait. No product photos.
-Output strictly as compact JSON with keys: title, excerpt, tags (array), html (article body in HTML), references (array of {title,url,source}). Do not include any commentary before or after JSON.`;
+
+CRITICAL: Your response MUST be valid JSON only. No text before or after. Start with { and end with }. Use these exact keys:
+- title (string)
+- excerpt (string) 
+- tags (array of strings)
+- html (string containing the article body in HTML)
+- references (array of objects with title, url, source properties)`;
 
   const memorySummary = (memory.recent || [])
     .slice(-3)
@@ -87,6 +93,7 @@ Output strictly as compact JSON with keys: title, excerpt, tags (array), html (a
       { role: 'user', content: user }
     ],
     temperature: personaTemp,
+    max_tokens: 6000,
   };
 
   const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -104,12 +111,25 @@ Output strictly as compact JSON with keys: title, excerpt, tags (array), html (a
     process.exit(1);
   }
   const data = await res.json();
-  const content = data.choices?.[0]?.message?.content || '';
+  let content = data.choices?.[0]?.message?.content || '';
+  
+  // Clean up common JSON formatting issues
+  content = content.trim();
+  if (content.startsWith('```json')) {
+    content = content.replace(/^```json\s*/, '').replace(/\s*```$/, '');
+  }
+  if (content.startsWith('```')) {
+    content = content.replace(/^```\s*/, '').replace(/\s*```$/, '');
+  }
+  
   let parsed;
   try {
     parsed = JSON.parse(content);
   } catch (e) {
-    console.error('Failed to parse JSON content:', content.slice(0, 200));
+    console.error('Failed to parse JSON content. Content length:', content.length);
+    console.error('First 500 chars:', content.slice(0, 500));
+    console.error('Last 500 chars:', content.slice(-500));
+    console.error('Parse error:', e.message);
     process.exit(1);
   }
 
@@ -162,7 +182,7 @@ Output strictly as compact JSON with keys: title, excerpt, tags (array), html (a
     references,
   };
 
-  const tsx = `import type { PostModule } from '@/blog/types';\n\nexport const meta = ${JSON.stringify(meta, null, 2)} as const;\n\nexport const Content = () => (\n  <div className=\"prose prose-neutral dark:prose-invert\"\n    dangerouslySetInnerHTML={{ __html: ${JSON.stringify(html)} }}\n  />\n);\n\nexport default { meta, Content } satisfies PostModule;\n`;
+  const tsx = `import type { PostModule, PostMeta } from '@/blog/types';\n\nexport const meta = ${JSON.stringify(meta, null, 2)} satisfies PostMeta;\n\nexport const Content = () => (\n  <div className=\"prose prose-neutral dark:prose-invert\"\n    dangerouslySetInnerHTML={{ __html: ${JSON.stringify(html)} }}\n  />\n);\n\nexport default { meta, Content } satisfies PostModule;\n`;
 
   fs.mkdirSync(postsDir, { recursive: true });
   const outPath = path.join(postsDir, `${slug}.tsx`);
