@@ -14,6 +14,7 @@ const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const OPENROUTER_REFERER = process.env.OPENROUTER_REFERER || 'https://www.syntaxthreads.com';
 const OPENROUTER_TITLE = process.env.OPENROUTER_TITLE || 'SyntaxThreadsCo';
 const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || 'openrouter/auto';
+const OPENROUTER_TEMPERATURE = process.env.OPENROUTER_TEMPERATURE || '0.6';
 
 if (!OPENROUTER_API_KEY) {
   console.error('Missing OPENROUTER_API_KEY');
@@ -55,6 +56,10 @@ async function main() {
   const moduleIdx = persona.cursor % persona.modules.length;
   const module = persona.modules[moduleIdx];
 
+  // Model and temperature selection: persona override -> env -> default
+  const personaModel = persona.model || OPENROUTER_MODEL;
+  const personaTemp = typeof persona.temperature === 'number' ? persona.temperature : Number(OPENROUTER_TEMPERATURE);
+
   // Build prompt
   const system = `You are a brand writer for SyntaxThreadsCo. Voice is authentic, humble, lightly witty, developer-respectful. 
 Write a 5-minute technical blog post (~800–1100 words). Structure with: a short lead, 2–3 H2 sections, exactly one focused code block if relevant, and a References list with at least 1 credible link (prefer official docs). 
@@ -68,12 +73,12 @@ Tone: useful first, promotional second; avoid hype and clickbait. No product pho
   const user = `Persona: ${personaName}\nModule: ${module.title} (${module.category})\nHint: ${module.hint}\nDo not repeat recent posts; build upon them.\nRecent posts:\n${memorySummary || '(none)'}\nConstraints: 800–1100 words, at least 1 reference, include 2–3 H2 headings, include 1 code block if relevant.`;
 
   const body = {
-    model: OPENROUTER_MODEL,
+    model: personaModel,
     messages: [
       { role: 'system', content: system },
       { role: 'user', content: user }
     ],
-    temperature: 0.7,
+    temperature: personaTemp,
   };
 
   const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -109,6 +114,19 @@ Tone: useful first, promotional second; avoid hype and clickbait. No product pho
 
   if (!title || !html || references.length === 0) {
     console.error('Invalid generation: missing title/html/references');
+    process.exit(1);
+  }
+  // Ensure at least one credible reference (allowlist by persona)
+  function hostname(u){ try { return new URL(u).hostname; } catch { return ''; } }
+  const DOMAIN_ALLOWLIST = {
+    'Python Warrior': ['python.org', 'docs.python.org', 'peps.python.org'],
+    'TypeScript Strategist': ['typescriptlang.org', 'www.typescriptlang.org', 'tc39.es', 'nodejs.org'],
+    'PHP Builder': ['php.net', 'www.php.net'],
+  };
+  const allowed = DOMAIN_ALLOWLIST[personaName] || [];
+  const hasCredible = references.some(r => allowed.some(domain => hostname(r.url).endsWith(domain)));
+  if (!hasCredible) {
+    console.error('No credible reference found for persona:', personaName, 'References:', references.map(r=>r.url));
     process.exit(1);
   }
   const words = html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
@@ -163,4 +181,3 @@ main().catch((e) => {
   console.error(e);
   process.exit(1);
 });
-
