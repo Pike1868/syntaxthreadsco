@@ -14,6 +14,7 @@ const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const OPENROUTER_REFERER = process.env.OPENROUTER_REFERER || 'https://www.syntaxthreads.com';
 const OPENROUTER_TITLE = process.env.OPENROUTER_TITLE || 'SyntaxThreadsCo';
 // Default to a high-quality consistent model unless overridden
+// Fallback option: 'openai/gpt-4o' if Claude has JSON issues
 const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || 'anthropic/claude-3.5-sonnet';
 const OPENROUTER_TEMPERATURE = process.env.OPENROUTER_TEMPERATURE || '0.6';
 
@@ -128,12 +129,25 @@ Use these exact keys:
   try {
     parsed = JSON.parse(content);
   } catch (e) {
-    console.error('Failed to parse JSON content. Content length:', content.length);
-    console.error('Parse error:', e.message);
-    console.error('Character at error position:', content.charAt(e.message.match(/\d+/)?.[0] || 0));
-    console.error('First 500 chars:', content.slice(0, 500));
-    console.error('Last 500 chars:', content.slice(-500));
-    process.exit(1);
+    console.log('Initial JSON parse failed, attempting to fix control characters...');
+    
+    // Fix common control character issues
+    const fixedContent = content
+      .replace(/\n/g, '\\n')
+      .replace(/\r/g, '\\r') 
+      .replace(/\t/g, '\\t');
+    
+    try {
+      parsed = JSON.parse(fixedContent);
+      console.log('Successfully fixed JSON by escaping control characters');
+    } catch (e2) {
+      console.error('Failed to parse JSON even after fixing. Content length:', content.length);
+      console.error('Original error:', e.message);
+      console.error('Fixed attempt error:', e2.message);
+      console.error('First 500 chars:', content.slice(0, 500));
+      console.error('Last 500 chars:', content.slice(-500));
+      process.exit(1);
+    }
   }
 
   // Validate
