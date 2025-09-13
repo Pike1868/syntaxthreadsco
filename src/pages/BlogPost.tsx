@@ -1,5 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { posts, postsBySlug } from '@/blog/registry';
+import { PERSONAS } from '@/blog/personas';
+import { Avatar, NewsletterForm } from '@/components';
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -27,9 +29,10 @@ export default function BlogPost() {
       {/* Header */}
       <header className="mb-8">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
+            <Avatar name={meta.persona} initials={PERSONAS[meta.persona].initials} src={PERSONAS[meta.persona].avatar} />
             <span className="inline-flex items-center rounded-full border border-border bg-card px-2.5 py-0.5 text-xs text-muted-foreground">
-              {meta.persona}
+              {PERSONAS[meta.persona].display}
             </span>
             {meta.tags?.length ? (
               <div className="flex flex-wrap gap-1.5">
@@ -43,6 +46,11 @@ export default function BlogPost() {
         </div>
 
         <h1 className="display-heading text-3xl sm:text-4xl font-bold tracking-tight mt-3">{meta.title}</h1>
+        {meta.cover && (
+          <div className="mt-6 overflow-hidden rounded-xl border border-border bg-muted">
+            <img src={meta.cover} alt="Cover" className="w-full h-64 object-cover" />
+          </div>
+        )}
       </header>
 
       <div className="mx-auto max-w-3xl">
@@ -69,6 +77,11 @@ export default function BlogPost() {
           </div>
         </div>
       </footer>
+
+      {/* Newsletter */}
+      <div className="mt-12 max-w-2xl mx-auto">
+        <NewsletterForm />
+      </div>
     </article>
   );
 }

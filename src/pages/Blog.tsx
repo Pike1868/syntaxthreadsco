@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { posts } from '@/blog/registry';
+import NewsletterForm from '@/components/NewsletterForm';
 
 export default function Blog() {
   const sorted = [...posts].sort((a, b) => b.meta.date.localeCompare(a.meta.date));
@@ -41,6 +42,11 @@ export default function Blog() {
             ) : null}
           </Link>
         ))}
+      </div>
+
+      {/* Newsletter */}
+      <div className="mt-12 max-w-2xl mx-auto">
+        <NewsletterForm />
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ export const meta = {
   excerpt: 'Practical types for real-world code — start small, win daily.',
   tags: ['typescript', 'beginners', 'types'],
   persona: 'TypeScript Strategist' as const,
+  cover: '/images/hero-carousel/typescript-back-black.webp',
 };
 
 export const Content = () => (
@@ -32,4 +33,3 @@ const p: Person = { name: 'Lin', active: false };`}</code></pre>
 );
 
 export default { meta, Content } satisfies PostModule;
-

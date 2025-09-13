@@ -9,10 +9,10 @@ export interface PostMeta {
   excerpt: string;
   tags: string[];
   persona: Persona;
+  cover?: string; // optional cover image path
 }
 
 export interface PostModule {
   meta: PostMeta;
   Content: () => ReactNode;
 }
-
