@@ -47,6 +47,7 @@ export default function BlogPost() {
         </div>
 
         <h1 className="display-heading text-3xl sm:text-4xl font-bold tracking-tight mt-3">{meta.title}</h1>
+        <div className="mt-1 text-sm text-muted-foreground">By {PERSONAS[meta.persona].display}</div>
         {meta.cover && (
           <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-muted">
             <img src={meta.cover} alt="Cover" className="w-full h-72 md:h-80 object-cover" />
@@ -56,6 +57,19 @@ export default function BlogPost() {
 
       <div className="mx-auto max-w-3xl blog-content">
         <Content />
+      </div>
+
+      {/* Subtle persona blurb */}
+      <div className="mx-auto max-w-3xl mt-8">
+        <div className="rounded-xl border border-border bg-card/60 p-4 flex items-start gap-3">
+          <Avatar name={meta.persona} initials={PERSONAS[meta.persona].initials} src={PERSONAS[meta.persona].avatar} />
+          <div className="text-sm">
+            <div className="font-medium text-foreground">{PERSONAS[meta.persona].display}</div>
+            {PERSONAS[meta.persona].blurb && (
+              <p className="text-muted-foreground mt-1">{PERSONAS[meta.persona].blurb}</p>
+            )}
+          </div>
+        </div>
       </div>
 
       {/* References */}
