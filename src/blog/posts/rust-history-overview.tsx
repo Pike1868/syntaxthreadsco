@@ -6,7 +6,7 @@ export const meta = {
   date: new Date().toISOString(),
   excerpt: 'From a side project at Mozilla to a modern systems language with fearless concurrency and a friendly compiler.',
   tags: ['rust', 'history'],
-  persona: 'Rust Warrior' as const,
+  persona: 'Ferris Rustman' as const,
   cover: '/images/blog/covers/cover-history.svg',
   references: [
     {
@@ -67,4 +67,3 @@ fn makes_copy(n: i32) { println!("{}", n); }`}</code></pre>
 );
 
 export default { meta, Content } satisfies PostModule;
-

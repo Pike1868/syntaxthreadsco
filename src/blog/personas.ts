@@ -7,34 +7,34 @@ type PersonaInfo = {
 };
 
 export const PERSONAS: Record<Persona, PersonaInfo> = {
-  'Python Warrior': {
-    display: 'Python Warrior',
-    initials: 'PY',
+  'Monty Python': {
+    display: 'Monty Python',
+    initials: 'MP',
     avatar: undefined,
   },
-  'TypeScript Strategist': {
-    display: 'TypeScript Strategist',
-    initials: 'TS',
+  'Typey Tim': {
+    display: 'Typey Tim',
+    initials: 'TT',
     avatar: undefined,
   },
-  'PHP Builder': {
-    display: 'PHP Builder',
-    initials: 'PHP',
+  'Hypertext Harry': {
+    display: 'Hypertext Harry',
+    initials: 'HH',
     avatar: undefined,
   },
-  'Rust Warrior': {
-    display: 'Rust Warrior',
-    initials: 'RS',
+  'Ferris Rustman': {
+    display: 'Ferris Rustman',
+    initials: 'FR',
     avatar: undefined,
   },
-  'Java Warrior': {
-    display: 'Java Warrior',
-    initials: 'JV',
+  'Java the Hut': {
+    display: 'Java the Hut',
+    initials: 'JH',
     avatar: undefined,
   },
-  'C# Warrior': {
-    display: 'C# Warrior',
-    initials: 'C#',
+  'Dotnet Dave': {
+    display: 'Dotnet Dave',
+    initials: 'DD',
     avatar: undefined,
   },
 };

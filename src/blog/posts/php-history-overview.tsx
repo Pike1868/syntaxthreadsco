@@ -6,7 +6,7 @@ export const meta = {
   date: new Date().toISOString(),
   excerpt: 'Born as a simple tool by Rasmus Lerdorf, PHP grew into a pragmatic, widely deployed server-side language.',
   tags: ['php', 'history'],
-  persona: 'PHP Builder' as const,
+  persona: 'Hypertext Harry' as const,
   cover: '/images/blog/covers/cover-history.svg',
   references: [
     {
@@ -54,4 +54,3 @@ echo date('c');
 );
 
 export default { meta, Content } satisfies PostModule;
-

@@ -6,7 +6,7 @@ export const meta = {
   date: new Date().toISOString(),
   excerpt: 'A friendly intro to names, numbers, and strings — with zero drama.',
   tags: ['python', 'beginners', 'variables', 'types'],
-  persona: 'Python Warrior' as const,
+  persona: 'Monty Python' as const,
   cover: '/images/blog/covers/cover-python.svg',
   references: [
     {

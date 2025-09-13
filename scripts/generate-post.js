@@ -127,12 +127,12 @@ Output strictly as compact JSON with keys: title, excerpt, tags (array), html (a
   // Ensure at least one credible reference (allowlist by persona)
   function hostname(u){ try { return new URL(u).hostname; } catch { return ''; } }
   const DOMAIN_ALLOWLIST = {
-    'Python Warrior': ['python.org', 'docs.python.org', 'peps.python.org'],
-    'TypeScript Strategist': ['typescriptlang.org', 'www.typescriptlang.org', 'tc39.es', 'nodejs.org'],
-    'PHP Builder': ['php.net', 'www.php.net'],
-    'Rust Warrior': ['rust-lang.org', 'doc.rust-lang.org'],
-    'Java Warrior': ['docs.oracle.com', 'openjdk.org'],
-    'C# Warrior': ['learn.microsoft.com', 'docs.microsoft.com', 'dotnet.microsoft.com'],
+    'Monty Python': ['python.org', 'docs.python.org', 'peps.python.org'],
+    'Typey Tim': ['typescriptlang.org', 'www.typescriptlang.org', 'tc39.es', 'nodejs.org'],
+    'Hypertext Harry': ['php.net', 'www.php.net'],
+    'Ferris Rustman': ['rust-lang.org', 'doc.rust-lang.org'],
+    'Java the Hut': ['docs.oracle.com', 'openjdk.org'],
+    'Dotnet Dave': ['learn.microsoft.com', 'docs.microsoft.com', 'dotnet.microsoft.com'],
   };
   const allowed = DOMAIN_ALLOWLIST[personaName] || [];
   const hasCredible = references.some(r => allowed.some(domain => hostname(r.url).endsWith(domain)));

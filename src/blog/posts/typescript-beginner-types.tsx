@@ -6,7 +6,7 @@ export const meta = {
   date: new Date().toISOString(),
   excerpt: 'Practical types for real-world code — start small, win daily.',
   tags: ['typescript', 'beginners', 'types'],
-  persona: 'TypeScript Strategist' as const,
+  persona: 'Typey Tim' as const,
   cover: '/images/blog/covers/cover-typescript.svg',
   references: [
     {

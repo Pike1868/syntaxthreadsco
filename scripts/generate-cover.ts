@@ -1,6 +1,6 @@
 /**
  * Generate a cover image for a blog post using OpenAI Images API.
- * Usage: node scripts/generate-cover.ts --title "Post Title" --persona "Python Warrior" --out public/images/blog/covers/slug.webp
+ * Usage: node scripts/generate-cover.ts --title "Post Title" --persona "Monty Python" --out public/images/blog/covers/slug.webp
  * Requires: OPENAI_API_KEY env var.
  */
 
@@ -18,7 +18,7 @@ const out = arg('out');
 const apiKey = process.env.OPENAI_API_KEY;
 
 if (!title || !out) {
-  console.error('Usage: node scripts/generate-cover.ts --title "Post Title" --persona "Python Warrior" --out public/images/blog/covers/slug.webp');
+  console.error('Usage: node scripts/generate-cover.ts --title "Post Title" --persona "Monty Python" --out public/images/blog/covers/slug.webp');
   process.exit(1);
 }
 
@@ -65,4 +65,3 @@ main().catch((e) => {
   console.error(e);
   process.exit(1);
 });
-

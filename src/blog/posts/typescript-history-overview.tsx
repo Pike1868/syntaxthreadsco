@@ -6,7 +6,7 @@ export const meta = {
   date: new Date().toISOString(),
   excerpt: 'From JavaScript-at-scale headaches to a typed superset that reshaped front-end and Node tooling.',
   tags: ['typescript', 'history'],
-  persona: 'TypeScript Strategist' as const,
+  persona: 'Typey Tim' as const,
   cover: '/images/blog/covers/cover-history.svg',
   references: [
     {
@@ -57,4 +57,3 @@ function rename(user: User, name: string): User {
 );
 
 export default { meta, Content } satisfies PostModule;
-

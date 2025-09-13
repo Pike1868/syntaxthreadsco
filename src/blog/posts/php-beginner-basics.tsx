@@ -6,7 +6,7 @@ export const meta = {
   date: new Date().toISOString(),
   excerpt: 'Spin up a tiny PHP script and print something real.',
   tags: ['php', 'beginners', 'basics'],
-  persona: 'PHP Builder' as const,
+  persona: 'Hypertext Harry' as const,
   cover: '/images/blog/covers/cover-php.svg',
   references: [
     {

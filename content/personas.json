@@ -1,101 +1,221 @@
 {
   "rotation": [
-    "Python Warrior",
-    "TypeScript Strategist",
-    "PHP Builder",
-    "Rust Warrior",
-    "Java Warrior",
-    "C# Warrior"
+    "Monty Python",
+    "Typey Tim",
+    "Hypertext Harry",
+    "Ferris Rustman",
+    "Java the Hut",
+    "Dotnet Dave"
   ],
   "cursor": 0,
   "personas": {
-    "Python Warrior": {
+    "Monty Python": {
       "key": "python",
       "cover": "/images/blog/covers/cover-python.svg",
       "model": null,
       "temperature": 0.6,
-      "voice": "Practical, calm, readability-first. Prefers simple examples and ergonomics.",
+      "voice": "Practical, calm, readability-first. A wink of Monty humor.",
       "modules": [
-        { "category": "history", "title": "Origins & Philosophy", "hint": "Why Python emphasizes readability; ABC roots; timeline highlights." },
-        { "category": "foundations", "title": "Variables, Types, and Naming", "hint": "Practical intro with f-strings and conventions." },
-        { "category": "foundations", "title": "Control Flow & Functions", "hint": "if/else, loops, def, return; practical patterns." },
-        { "category": "advanced", "title": "Iterators & Generators", "hint": "yield, comprehension patterns; when to use." },
-        { "category": "frameworks", "title": "Web with Flask", "hint": "Tiny app, routing, templates; when to pick Flask." }
+        {
+          "category": "history",
+          "title": "Origins & Philosophy",
+          "hint": "Why Python emphasizes readability; ABC roots; timeline highlights."
+        },
+        {
+          "category": "foundations",
+          "title": "Variables, Types, and Naming",
+          "hint": "Practical intro with f-strings and conventions."
+        },
+        {
+          "category": "foundations",
+          "title": "Control Flow & Functions",
+          "hint": "if/else, loops, def, return; practical patterns."
+        },
+        {
+          "category": "advanced",
+          "title": "Iterators & Generators",
+          "hint": "yield, comprehension patterns; when to use."
+        },
+        {
+          "category": "frameworks",
+          "title": "Web with Flask",
+          "hint": "Tiny app, routing, templates; when to pick Flask."
+        }
       ],
       "cursor": 0
     },
-    "TypeScript Strategist": {
+    "Typey Tim": {
       "key": "typescript",
       "cover": "/images/blog/covers/cover-typescript.svg",
       "model": null,
       "temperature": 0.6,
-      "voice": "Contract-first, scale-minded, product pragmatism. Emphasizes types as design.",
+      "voice": "Contract-first, scale-minded, clean product pragmatism. Types as design.",
       "modules": [
-        { "category": "history", "title": "Why TypeScript", "hint": "JS scale problems; types as contracts; ecosystem." },
-        { "category": "foundations", "title": "Everyday Types", "hint": "primitives, objects, type aliases with examples." },
-        { "category": "foundations", "title": "Functions & Narrowing", "hint": "guards, unions, control flow analysis." },
-        { "category": "advanced", "title": "Generics without Pain", "hint": "type params, constraints, good defaults." },
-        { "category": "frameworks", "title": "React + TS Patterns", "hint": "props, discriminated unions, hooks typing." }
+        {
+          "category": "history",
+          "title": "Why TypeScript",
+          "hint": "JS scale problems; types as contracts; ecosystem."
+        },
+        {
+          "category": "foundations",
+          "title": "Everyday Types",
+          "hint": "primitives, objects, type aliases with examples."
+        },
+        {
+          "category": "foundations",
+          "title": "Functions & Narrowing",
+          "hint": "guards, unions, control flow analysis."
+        },
+        {
+          "category": "advanced",
+          "title": "Generics without Pain",
+          "hint": "type params, constraints, good defaults."
+        },
+        {
+          "category": "frameworks",
+          "title": "React + TS Patterns",
+          "hint": "props, discriminated unions, hooks typing."
+        }
       ],
       "cursor": 0
     },
-    "PHP Builder": {
+    "Hypertext Harry": {
       "key": "php",
       "cover": "/images/blog/covers/cover-php.svg",
       "model": null,
       "temperature": 0.6,
-      "voice": "Web-native pragmatism, ships fast, keeps things simple and readable.",
+      "voice": "Web-native pragmatist, ships fast, keeps it simple and readable.",
       "modules": [
-        { "category": "history", "title": "From Personal Home Page to Modern PHP", "hint": "How PHP evolved; 7.x and 8.x changes." },
-        { "category": "foundations", "title": "Syntax & First Script", "hint": "variables, strings, echo; short practical demo." },
-        { "category": "foundations", "title": "Functions & Arrays", "hint": "associative arrays, foreach, built-ins." },
-        { "category": "advanced", "title": "OOP Basics in PHP", "hint": "classes, namespaces, autoloading basics." },
-        { "category": "frameworks", "title": "Laravel in 5 Minutes", "hint": "routes, controllers, blade; where it shines." }
+        {
+          "category": "history",
+          "title": "From Personal Home Page to Modern PHP",
+          "hint": "How PHP evolved; 7.x and 8.x changes."
+        },
+        {
+          "category": "foundations",
+          "title": "Syntax & First Script",
+          "hint": "variables, strings, echo; short practical demo."
+        },
+        {
+          "category": "foundations",
+          "title": "Functions & Arrays",
+          "hint": "associative arrays, foreach, built-ins."
+        },
+        {
+          "category": "advanced",
+          "title": "OOP Basics in PHP",
+          "hint": "classes, namespaces, autoloading basics."
+        },
+        {
+          "category": "frameworks",
+          "title": "Laravel in 5 Minutes",
+          "hint": "routes, controllers, blade; where it shines."
+        }
       ],
       "cursor": 0
     },
-    "Rust Warrior": {
+    "Ferris Rustman": {
       "key": "rust",
       "cover": "/images/blog/covers/cover-rust.svg",
       "model": null,
       "temperature": 0.6,
-      "voice": "Systems-minded, precise, performance + safety, with practical examples.",
+      "voice": "Systems-minded, precise, safety + performance; dry wit, helpful compiler vibes.",
       "modules": [
-        { "category": "history", "title": "Why Rust? Safety and Performance", "hint": "Borrow checker origins; Mozilla; modern systems programming." },
-        { "category": "foundations", "title": "Ownership & Borrowing (gentle)", "hint": "Move semantics, references; small mental model." },
-        { "category": "foundations", "title": "Enums & Pattern Matching", "hint": "Expressive types with matches and Results." },
-        { "category": "advanced", "title": "Lifetimes (practical)", "hint": "Readable lifetime examples; avoid fear with simple rules." },
-        { "category": "frameworks", "title": "CLI with Clap", "hint": "Small CLI demo; ergonomics and safety." }
+        {
+          "category": "history",
+          "title": "Why Rust? Safety and Performance",
+          "hint": "Borrow checker origins; Mozilla; modern systems programming."
+        },
+        {
+          "category": "foundations",
+          "title": "Ownership & Borrowing (gentle)",
+          "hint": "Move semantics, references; small mental model."
+        },
+        {
+          "category": "foundations",
+          "title": "Enums & Pattern Matching",
+          "hint": "Expressive types with matches and Results."
+        },
+        {
+          "category": "advanced",
+          "title": "Lifetimes (practical)",
+          "hint": "Readable lifetime examples; avoid fear with simple rules."
+        },
+        {
+          "category": "frameworks",
+          "title": "CLI with Clap",
+          "hint": "Small CLI demo; ergonomics and safety."
+        }
       ],
       "cursor": 0
     },
-    "Java Warrior": {
+    "Java the Hut": {
       "key": "java",
       "cover": "/images/blog/covers/cover-java.svg",
       "model": null,
       "temperature": 0.6,
-      "voice": "Enterprise-ready, pragmatic OOP with modern Java features.",
+      "voice": "Pragmatic OOP, JVM portability, enterprise calm; gentle dad-joke energy.",
       "modules": [
-        { "category": "history", "title": "From Oak to Java", "hint": "Origins, JVM portability, industry adoption." },
-        { "category": "foundations", "title": "Classes, Records, and Immutability", "hint": "Modern Java: var, records; clean OO." },
-        { "category": "foundations", "title": "Collections & Streams", "hint": "Iteration, filtering, mapping clearly." },
-        { "category": "advanced", "title": "Concurrency in Java (intro)", "hint": "Executors, futures; structured concurrency." },
-        { "category": "frameworks", "title": "Spring Boot in 5 Minutes", "hint": "REST controller; configuration minimalism." }
+        {
+          "category": "history",
+          "title": "From Oak to Java",
+          "hint": "Origins, JVM portability, industry adoption."
+        },
+        {
+          "category": "foundations",
+          "title": "Classes, Records, and Immutability",
+          "hint": "Modern Java: var, records; clean OO."
+        },
+        {
+          "category": "foundations",
+          "title": "Collections & Streams",
+          "hint": "Iteration, filtering, mapping clearly."
+        },
+        {
+          "category": "advanced",
+          "title": "Concurrency in Java (intro)",
+          "hint": "Executors, futures; structured concurrency."
+        },
+        {
+          "category": "frameworks",
+          "title": "Spring Boot in 5 Minutes",
+          "hint": "REST controller; configuration minimalism."
+        }
       ],
       "cursor": 0
     },
-    "C# Warrior": {
+    "Dotnet Dave": {
       "key": "csharp",
       "cover": "/images/blog/covers/cover-csharp.svg",
       "model": null,
       "temperature": 0.6,
-      "voice": "Modern .NET: expressive, productive, strongly typed.",
+      "voice": "Modern .NET: expressive, productive, strongly typed\u2014with friendly commentary.",
       "modules": [
-        { "category": "history", "title": "Why C# and .NET?", "hint": "Anders Hejlsberg lineage; cross-platform evolution." },
-        { "category": "foundations", "title": "Types, Records, and LINQ", "hint": "Idiomatic modeling and data queries." },
-        { "category": "foundations", "title": "Async/Await (intro)", "hint": "Practical concurrency with Tasks." },
-        { "category": "advanced", "title": "Pattern Matching & Span<T>", "hint": "Modern features that matter." },
-        { "category": "frameworks", "title": "Minimal APIs in ASP.NET Core", "hint": "Hello REST with minimal ceremony." }
+        {
+          "category": "history",
+          "title": "Why C# and .NET?",
+          "hint": "Anders Hejlsberg lineage; cross-platform evolution."
+        },
+        {
+          "category": "foundations",
+          "title": "Types, Records, and LINQ",
+          "hint": "Idiomatic modeling and data queries."
+        },
+        {
+          "category": "foundations",
+          "title": "Async/Await (intro)",
+          "hint": "Practical concurrency with Tasks."
+        },
+        {
+          "category": "advanced",
+          "title": "Pattern Matching & Span<T>",
+          "hint": "Modern features that matter."
+        },
+        {
+          "category": "frameworks",
+          "title": "Minimal APIs in ASP.NET Core",
+          "hint": "Hello REST with minimal ceremony."
+        }
       ],
       "cursor": 0
     }

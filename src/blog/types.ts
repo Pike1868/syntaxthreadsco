@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 
 export type Persona =
-  | 'Python Warrior'
-  | 'TypeScript Strategist'
-  | 'PHP Builder'
-  | 'Rust Warrior'
-  | 'Java Warrior'
-  | 'C# Warrior';
+  | 'Monty Python'
+  | 'Typey Tim'
+  | 'Hypertext Harry'
+  | 'Ferris Rustman'
+  | 'Java the Hut'
+  | 'Dotnet Dave';
 
 export interface PostMeta {
   title: string;

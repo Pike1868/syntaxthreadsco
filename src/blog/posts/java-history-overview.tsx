@@ -6,7 +6,7 @@ export const meta = {
   date: new Date().toISOString(),
   excerpt: 'From Oak and set‑top boxes to the JVM that powers massive enterprise systems and modern Android apps.',
   tags: ['java', 'history'],
-  persona: 'Java Warrior' as const,
+  persona: 'Java the Hut' as const,
   cover: '/images/blog/covers/cover-history.svg',
   references: [
     {
@@ -53,4 +53,3 @@ User flip(User u) { return new User(u.name(), !u.active()); }`}</code></pre>
 );
 
 export default { meta, Content } satisfies PostModule;
-

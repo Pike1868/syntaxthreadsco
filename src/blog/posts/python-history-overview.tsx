@@ -6,7 +6,7 @@ export const meta = {
   date: new Date().toISOString(),
   excerpt: 'From ABC to the web to data science — a calm, readable arc.',
   tags: ['python', 'history'],
-  persona: 'Python Warrior' as const,
+  persona: 'Monty Python' as const,
   cover: '/images/blog/covers/cover-history.svg',
   references: [
     {

@@ -6,7 +6,7 @@ export const meta = {
   date: new Date().toISOString(),
   excerpt: 'From .NET’s early days to open‑source, cross‑platform tooling and a language that kept getting nicer to write.',
   tags: ['csharp', 'history'],
-  persona: 'C# Warrior' as const,
+  persona: 'Dotnet Dave' as const,
   cover: '/images/blog/covers/cover-history.svg',
   references: [
     {
@@ -57,4 +57,3 @@ var activeNames = users
 );
 
 export default { meta, Content } satisfies PostModule;
-
