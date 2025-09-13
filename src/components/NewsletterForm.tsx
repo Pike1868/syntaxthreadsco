@@ -1,12 +1,14 @@
 import { useState } from 'react';
 
-const formspreeId = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
+const envFormspreeId = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
+const DEFAULT_FORMSPREE_ID = 'myzdvnow'; // non-secret public form id
 
 export default function NewsletterForm({ compact = false }: { compact?: boolean }) {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<null | 'ok' | 'error'>(null);
 
+  const formspreeId = envFormspreeId || DEFAULT_FORMSPREE_ID;
   const endpoint = formspreeId ? `https://formspree.io/f/${formspreeId}` : undefined;
 
   async function onSubmit(e: React.FormEvent) {
