@@ -8,6 +8,13 @@ export const meta = {
   tags: ['php', 'beginners', 'basics'],
   persona: 'PHP Builder' as const,
   cover: '/images/blog/covers/cover-php.svg',
+  references: [
+    {
+      title: 'PHP Manual — Getting Started',
+      url: 'https://www.php.net/manual/en/tutorial.firstpage.php',
+      source: 'php.net',
+    },
+  ],
 };
 
 export const Content = () => (

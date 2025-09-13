@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1320"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <radialGradient id="rad" cx="0.2" cy="0.2" r="1">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <rect width="1200" height="600" fill="url(#rad)"/>
+  <g stroke="#334155" stroke-width="1">
+    <path d="M120 500 L1080 500"/>
+    <path d="M120 450 L1080 450"/>
+  </g>
+  <g fill="#64748b" opacity="0.9">
+    <circle cx="200" cy="500" r="4"/>
+    <circle cx="480" cy="500" r="4"/>
+    <circle cx="760" cy="500" r="4"/>
+    <circle cx="1040" cy="500" r="4"/>
+  </g>
+  <g fill="#94a3b8" opacity="0.8">
+    <rect x="190" y="440" width="20" height="20" rx="4"/>
+    <rect x="470" y="440" width="20" height="20" rx="4"/>
+    <rect x="750" y="440" width="20" height="20" rx="4"/>
+    <rect x="1030" y="440" width="20" height="20" rx="4"/>
+  </g>
+  <text x="60" y="540" fill="#cbd5e1" font-size="18" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" opacity="0.7">history • timeline • origins</text>
+</svg>

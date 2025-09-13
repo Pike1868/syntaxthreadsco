@@ -8,6 +8,13 @@ export const meta = {
   tags: ['typescript', 'beginners', 'types'],
   persona: 'TypeScript Strategist' as const,
   cover: '/images/blog/covers/cover-typescript.svg',
+  references: [
+    {
+      title: 'TypeScript Handbook — Everyday Types',
+      url: 'https://www.typescriptlang.org/docs/handbook/2/everyday-types.html',
+      source: 'typescriptlang.org',
+    },
+  ],
 };
 
 export const Content = () => (

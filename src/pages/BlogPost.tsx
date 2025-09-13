@@ -57,6 +57,23 @@ export default function BlogPost() {
         <Content />
       </div>
 
+      {/* References */}
+      {meta.references?.length ? (
+        <section className="mx-auto max-w-3xl mt-10">
+          <h3 className="text-sm font-semibold tracking-wide uppercase text-muted-foreground">References</h3>
+          <ul className="mt-3 list-disc list-inside space-y-1 text-sm">
+            {meta.references.map((ref) => (
+              <li key={ref.url}>
+                <a href={ref.url} target="_blank" rel="noopener noreferrer" className="underline">
+                  {ref.title}
+                </a>
+                {ref.source ? <span className="text-muted-foreground"> — {ref.source}</span> : null}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       {/* Footer navigation */}
       <footer className="mt-12 pt-6 border-t border-border">
         <div className="flex items-center justify-between text-sm">

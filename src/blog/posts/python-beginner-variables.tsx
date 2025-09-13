@@ -8,6 +8,13 @@ export const meta = {
   tags: ['python', 'beginners', 'variables', 'types'],
   persona: 'Python Warrior' as const,
   cover: '/images/blog/covers/cover-python.svg',
+  references: [
+    {
+      title: 'Python Tutorial — An Informal Introduction to Python',
+      url: 'https://docs.python.org/3/tutorial/introduction.html',
+      source: 'docs.python.org',
+    },
+  ],
 };
 
 export const Content = () => (

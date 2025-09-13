@@ -10,6 +10,11 @@ export interface PostMeta {
   tags: string[];
   persona: Persona;
   cover?: string; // optional cover image path
+  references?: Array<{
+    title: string;
+    url: string;
+    source?: string;
+  }>;
 }
 
 export interface PostModule {
