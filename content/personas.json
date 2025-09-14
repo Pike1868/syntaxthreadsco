@@ -7,7 +7,7 @@
     "Java the Hut",
     "Dotnet Dave"
   ],
-  "cursor": 1,
+  "cursor": 2,
   "personas": {
     "Monty Python": {
       "key": "python",
@@ -77,7 +77,7 @@
           "hint": "props, discriminated unions, hooks typing."
         }
       ],
-      "cursor": 0
+      "cursor": 1
     },
     "Hypertext Harry": {
       "key": "php",
