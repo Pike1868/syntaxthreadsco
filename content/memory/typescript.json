@@ -1,3 +1,15 @@
 {
-  "recent": []
+  "recent": [
+    {
+      "title": "Why TypeScript? A Brief History of Scaling JavaScript",
+      "excerpt": "JavaScript wasn't built for large-scale applications. Here's how TypeScript emerged to help teams write more maintainable code through static typing, and why it matters for modern development.",
+      "slug": "2025-09-14-why-typescript-a-brief-history-of-scaling-javascript",
+      "tags": [
+        "typescript",
+        "javascript",
+        "software-engineering",
+        "web-development"
+      ]
+    }
+  ]
 }
