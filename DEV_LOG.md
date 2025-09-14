@@ -4,7 +4,7 @@
 
 **Status**: ✅ PRODUCTION READY - Enhanced & Deployed
 **Started**: 2025-08-03
-**Last Updated**: 2025-08-03
+**Last Updated**: 2025-09-13
 **Goal**: Professional frontend showcase for SyntaxThreadsCo Etsy store with enhanced UX
 
 🎉 **LIVE SITE**: https://www.syntaxthreads.com
@@ -69,6 +69,48 @@
 - [ ] Analytics integration
 
 ## Development History
+
+### 2025-09-13 - Premium UI Refresh, Blog, and Automation
+
+Completed by: Luis + ChatGPT (Codex CLI)
+
+Frontend polish
+- Sticky, translucent navbar with subtle border and backdrop blur.
+- Hero copy refined to authentic, humble tone (no hype; subtle humor).
+- Product cards and featured cards: hover gradient overlays + inline “Buy on Etsy” CTAs; locale-aware currency formatting.
+- Single product: added About, Key Features (icons), Care Instructions (icons), highlights chips, mobile sticky buy bar, and trust cues.
+- Products listing now hides Classic fit items per request (Premium only).
+- Product image paths corrected for Premium generic assets; global de-duplication of image URLs in `imageUtils.ts` to prevent duplicate renders.
+
+Blog
+- New blog with Medium-like cards and refined post layout; larger covers, tags, persona badges, prev/next.
+- Added initial posts: history + beginner lessons for Python, TypeScript, PHP; history for Rust, Java, C#.
+- References section rendered at post bottom (requires credible sources; official docs preferred).
+- Persona system with subtle human names and voices: Monty Python (Python), Typey Tim (TypeScript), Hypertext Harry (PHP), Ferris Rustman (Rust), Java the Hut (Java), Dotnet Dave (C#). Added avatar initials and a subtle persona blurb box on posts.
+- Neutral abstract SVG covers (no product photos) with 3 variants per theme/persona; deterministic selection by slug + soft persona/theme gradient overlays.
+
+Newsletter
+- Inline newsletter form on blog pages using Formspree; auto-hidden when not configured. Default wired to `/f/myzdvnow` so it works now.
+
+Routing/Deploy
+- SPA refresh fix for GitHub Pages: deploy workflow copies `index.html` to `404.html` so deep links and refreshes work.
+- GitHub Pages deploy workflow added (`.github/workflows/deploy.yml`).
+
+Content & Copy
+- About page “Our Story” rewritten to match Etsy-style authenticity (small batches, trusted printing, quick ship, make it right).
+- Removed “Quality over quantity” from blog header per request; kept clean, honest tagline.
+- Removed “wink” wording site-wide; kept “subtle humor”.
+
+Automation
+- Weekend blog generator via OpenRouter with syllabus + per-persona memory for continuity (`scripts/generate-post.js`).
+- Enforces 5‑minute reads (~800–1100 words), structure (2–3 H2s, one code block), and at least one credible reference per persona (allowlist of official doc domains). Fails if not met.
+- Default model: `anthropic/claude-3.5-sonnet`. Model can be overridden with repo variable `OPENROUTER_MODEL`; per‑persona `model`/`temperature` supported in `content/personas.json`.
+- Runs Sat/Sun 12:00 UTC and opens a PR for review (`.github/workflows/generate-posts.yml`).
+
+Tech notes
+- New helpers: `src/blog/covers.ts` (variant selection + overlays), `src/utils/format.ts` (currency formatting).
+- Navigation includes Blog; SPA routes added for `/blog` and `/blog/:slug`.
+
 
 ### 2025-08-09 - Image Standardization & Hero Carousel
 

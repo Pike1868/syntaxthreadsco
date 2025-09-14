@@ -7,7 +7,12 @@
       "Bash(npm run build:*)",
       "Bash(ls:*)",
       "Bash(cp:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh workflow:*)",
+      "WebSearch",
+      "WebFetch(domain:openrouter.ai)",
+      "Bash(gh run view:*)"
     ],
     "deny": []
   }
