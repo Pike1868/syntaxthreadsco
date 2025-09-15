@@ -14,8 +14,10 @@ export default function FeaturedProducts() {
   
   // All available products grouped by fit type
   const allProducts = productData.products as import('@/types/product').Product[];
-  // Only feature Premium products
-  const orderedProducts = allProducts.filter(p => p.fit === 'Premium');
+  // Only feature Premium products, excluding PHP from warrior series (doesn't exist)
+  const orderedProducts = allProducts.filter(p => 
+    p.fit === 'Premium' && !(p.collection === 'warrior-series' && p.language === 'PHP')
+  );
   
   // Get 4 products starting from startIndex, wrapping around if needed
   const getFeaturedProducts = () => {
@@ -54,7 +56,7 @@ export default function FeaturedProducts() {
 
   return (
     <div className="pt-24">
-      <SectionTitle text="Featured Warrior Collection" />
+      <SectionTitle text="Featured Collections" />
       
       <div 
         className="mt-16 relative"
@@ -105,15 +107,15 @@ function FeaturedProductCard({
   product: import('@/types/product').Product;
   sharedImageIndex: number;
 }) {
-  const { listingId, title, language, fit, basePrice } = product;
+  const { listingId, title, language, fit, basePrice, collection } = product;
   
   const productId = listingId || title
     .replace(/[^\w\s]/g, '') // Remove special characters
     .replace(/\s+/g, '-')    // Replace spaces with dashes
     .toLowerCase();
   
-  // Get all images for this product
-  const productImages = getProductImages(product);
+  // Get all images for this product based on collection
+  const productImages = getProductImages(product, collection);
   const validImages = productImages.length > 0 ? productImages : [getPlaceholderImage()];
   
   // Use shared image index, but stay within bounds of this product's images
@@ -154,7 +156,7 @@ function FeaturedProductCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-3">
             <div className="text-white">
               <h3 className="font-mono text-lg font-bold">{language}</h3>
-              <p className="text-xs opacity-80">WARRIOR • {fit}</p>
+              <p className="text-xs opacity-80">{collection === 'warrior-series' ? 'WARRIOR' : 'HEXCODE'} • {fit}</p>
             </div>
             <Button
               size="sm"
@@ -171,7 +173,7 @@ function FeaturedProductCard({
         
         <div className="mt-3 text-center">
           <h3 className="text-sm font-medium text-foreground group-hover:text-muted-foreground">
-            {language} Warrior
+            {language} {collection === 'warrior-series' ? 'Warrior' : 'Hexcode'}
           </h3>
           <p className="text-xs text-muted-foreground mb-1">{fit} Fit</p>
           <p className="text-lg font-semibold text-foreground">

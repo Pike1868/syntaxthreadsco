@@ -72,26 +72,17 @@ export const getHexcodeProductThumbnails = (product: Product): string[] => {
   return getProductImagePaths(product, 'thumbnails', 'hexcode-series');
 };
 
-// Get back design images for hero carousel
+// Get curated back design images for hero carousel
 export const getBackDesignImages = (): string[] => {
-  const warriorBackImages = [
-    '/images/hero-carousel/csharp-back-black.webp',
-    '/images/hero-carousel/java-back-black.webp',
-    '/images/hero-carousel/python-back-black.webp',
-    '/images/hero-carousel/rust-back-black.webp',
-    '/images/hero-carousel/typescript-back-black.webp',
+  // Curated selection of 6 different back designs (mix of both collections)
+  return [
+    '/images/hero-carousel/java-back-black.webp',           // Java Warrior
+    '/images/products/hexcode-series/python/gallery/back-black.webp',  // Python Hexcode
+    '/images/hero-carousel/rust-back-black.webp',           // Rust Warrior
+    '/images/products/hexcode-series/typescript/gallery/back-black.webp', // TypeScript Hexcode
+    '/images/hero-carousel/csharp-back-black.webp',         // C# Warrior
+    '/images/products/hexcode-series/php/gallery/back-black.webp',      // PHP Hexcode
   ];
-  
-  const hexcodeBackImages = [
-    '/images/products/hexcode-series/csharp/gallery/back-black.webp',
-    '/images/products/hexcode-series/java/gallery/back-black.webp',
-    '/images/products/hexcode-series/python/gallery/back-black.webp',
-    '/images/products/hexcode-series/rust/gallery/back-black.webp',
-    '/images/products/hexcode-series/typescript/gallery/back-black.webp',
-    '/images/products/hexcode-series/php/gallery/back-black.webp',
-  ];
-  
-  return [...warriorBackImages, ...hexcodeBackImages];
 };
 
 export const getPlaceholderImage = (): string => {

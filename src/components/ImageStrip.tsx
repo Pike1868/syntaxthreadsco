@@ -1,10 +1,10 @@
 type StripImage = { src: string; alt: string };
 
 const defaultImages: StripImage[] = [
-  { src: '/images/products/warrior-series/premium/generic/gallery/front-person-black.webp', alt: 'Premium tee on model' },
-  { src: '/images/products/warrior-series/premium/generic/gallery/front-generic-black.webp', alt: 'Premium tee flat lay' },
-  { src: '/images/products/warrior-series/premium/generic/gallery/front-person-generic-closeup-black.webp', alt: 'Close-up fabric and print' },
-  { src: '/images/hero-carousel/rust-back-black.webp', alt: 'Back print detail' },
+  { src: '/images/hero-carousel/java-back-black.webp', alt: 'Java Warrior back design' },
+  { src: '/images/products/hexcode-series/python/gallery/back-black.webp', alt: 'Python Hexcode back design' },
+  { src: '/images/hero-carousel/rust-back-black.webp', alt: 'Rust Warrior back design' },
+  { src: '/images/products/hexcode-series/typescript/gallery/back-black.webp', alt: 'TypeScript Hexcode back design' },
 ];
 
 export default function ImageStrip({ images = defaultImages }: { images?: StripImage[] }) {
