@@ -1,8 +1,9 @@
 export interface Product {
   listingId: number | null;
   title: string;
-  language: 'Python' | 'Java' | 'Rust' | 'TypeScript' | 'C#';
+  language: 'Python' | 'Java' | 'Rust' | 'TypeScript' | 'C#' | 'PHP';
   fit: 'Classic' | 'Premium';
+  collection: 'warrior-series' | 'hexcode-series';
   basePrice: number;
   currency: string;
   etsyUrl: string;
@@ -15,3 +16,4 @@ export interface ProductData {
 
 export type ProgrammingLanguage = Product['language'];
 export type FitType = Product['fit'];
+export type CollectionType = Product['collection'];

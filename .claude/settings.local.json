@@ -12,7 +12,8 @@
       "Bash(gh workflow:*)",
       "WebSearch",
       "WebFetch(domain:openrouter.ai)",
-      "Bash(gh run view:*)"
+      "Bash(gh run view:*)",
+      "Bash(node:*)"
     ],
     "deny": []
   }

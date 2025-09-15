@@ -1,14 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import ImageCarousel from './ImageCarousel';
+import { getBackDesignImages } from '@/utils/imageUtils';
 
-const heroImages = [
-  '/images/hero-carousel/csharp-back-black.webp',
-  '/images/hero-carousel/java-back-black.webp',
-  '/images/hero-carousel/python-back-black.webp',
-  '/images/hero-carousel/rust-back-black.webp',
-  '/images/hero-carousel/typescript-back-black.webp',
-];
+const heroImages = getBackDesignImages();
 
 export default function Hero() {
   return (
@@ -27,7 +22,7 @@ export default function Hero() {
         <div className="mt-8 flex items-center gap-x-4">
           <Link to="/products">
             <Button size="lg" className="px-7">
-              Shop the Warrior Collection
+              Shop All Collections
             </Button>
           </Link>
 
@@ -40,7 +35,10 @@ export default function Hero() {
 
         <div className="mt-6 text-sm text-muted-foreground">
           <p>
-            Available languages: <span className="font-mono">Python • Java • Rust • TypeScript • C#</span>
+            Available languages: <span className="font-mono">Python • Java • Rust • TypeScript • C# • PHP</span>
+          </p>
+          <p className="mt-1">
+            Collections: <span className="font-mono">Warrior Series • Hexcode Series</span>
           </p>
         </div>
       </div>

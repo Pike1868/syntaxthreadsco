@@ -4,26 +4,66 @@ import { getProductImages, getPlaceholderImage } from '@/utils/imageUtils';
 import { formatCurrency } from '@/utils';
 import productData from '@/data/products.json';
 import { Button } from '@/components/ui/button';
-import { Leaf, ShieldCheck } from 'lucide-react';
+import { Leaf, ShieldCheck, Filter } from 'lucide-react';
+import type { CollectionType } from '@/types/product';
 
 export default function ProductsGrid() {
+  const [selectedCollection, setSelectedCollection] = useState<CollectionType | 'all'>('all');
   const { products } = productData;
+  
   // Only show Premium fit products on the listing page
-  const visibleProducts = (products as import('@/types/product').Product[]).filter(
+  const premiumProducts = (products as import('@/types/product').Product[]).filter(
     (p) => p.fit !== 'Classic'
   );
+  
+  // Filter by collection
+  const visibleProducts = selectedCollection === 'all' 
+    ? premiumProducts 
+    : premiumProducts.filter(p => p.collection === selectedCollection);
 
   return (
-    <div className="pt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {visibleProducts.map((product) => {
-        return <ProductCard key={product.listingId || product.title} product={product} />;
-      })}
+    <div className="pt-12">
+      {/* Collection Filter */}
+      <div className="mb-8 flex flex-wrap gap-2 justify-center">
+        <Button
+          variant={selectedCollection === 'all' ? 'default' : 'outline'}
+          size="sm"
+          onClick={() => setSelectedCollection('all')}
+          className="text-xs"
+        >
+          <Filter className="h-3 w-3 mr-1" />
+          All Collections
+        </Button>
+        <Button
+          variant={selectedCollection === 'warrior-series' ? 'default' : 'outline'}
+          size="sm"
+          onClick={() => setSelectedCollection('warrior-series')}
+          className="text-xs"
+        >
+          Warrior Series
+        </Button>
+        <Button
+          variant={selectedCollection === 'hexcode-series' ? 'default' : 'outline'}
+          size="sm"
+          onClick={() => setSelectedCollection('hexcode-series')}
+          className="text-xs"
+        >
+          Hexcode Series
+        </Button>
+      </div>
+      
+      {/* Products Grid */}
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {visibleProducts.map((product) => {
+          return <ProductCard key={product.listingId || product.title} product={product} />;
+        })}
+      </div>
     </div>
   );
 }
 
 function ProductCard({ product }: { product: import('@/types/product').Product }) {
-  const { listingId, title, language, fit, basePrice, currency } = product;
+  const { listingId, title, language, fit, basePrice, currency, collection } = product;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   // Use listingId as unique identifier, fallback to title if null
@@ -32,8 +72,8 @@ function ProductCard({ product }: { product: import('@/types/product').Product }
     .replace(/\s+/g, '-')    // Replace spaces with dashes
     .toLowerCase();
   
-  // Get all images for this product
-  const productImages = getProductImages(product);
+  // Get all images for this product based on collection
+  const productImages = getProductImages(product, collection);
   const validImages = productImages.length > 0 ? productImages : [getPlaceholderImage()];
   
   // Auto-rotate images every 5 seconds if there are multiple images
@@ -70,7 +110,7 @@ function ProductCard({ product }: { product: import('@/types/product').Product }
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-3">
             <div className="text-white">
               <h3 className="font-mono text-lg font-bold leading-none">{language}</h3>
-              <p className="text-[11px] opacity-80 mt-1">WARRIOR • {fit} Fit</p>
+              <p className="text-[11px] opacity-80 mt-1">{collection === 'warrior-series' ? 'WARRIOR' : 'HEXCODE'} • {fit} Fit</p>
             </div>
             <Button size="sm" onClick={openEtsy} className="bg-white text-black hover:bg-white/90">
               Buy on Etsy
