@@ -1,3 +1,15 @@
 {
-  "recent": []
+  "recent": [
+    {
+      "title": "PHP's Journey: From Simple Scripts to Modern Powerhouse",
+      "excerpt": "Let's explore how PHP evolved from a personal project to power 77% of the web. We'll look at the key changes that transformed PHP into the robust language it is today.",
+      "slug": "2025-09-20-phps-journey-from-simple-scripts-to-modern-powerhouse",
+      "tags": [
+        "php",
+        "web development",
+        "programming history",
+        "php8"
+      ]
+    }
+  ]
 }
