@@ -3,7 +3,7 @@ import type { PostModule } from '@/blog/types';
 export const meta = {
   title: 'TypeScript #1 — Types Without Tears',
   slug: 'typescript-beginner-types',
-  date: new Date().toISOString(),
+  date: "2025-08-19T16:45:00.000Z",
   excerpt: 'Practical types for real-world code — start small, win daily.',
   tags: ['typescript', 'beginners', 'types'],
   persona: 'Typey Tim' as const,

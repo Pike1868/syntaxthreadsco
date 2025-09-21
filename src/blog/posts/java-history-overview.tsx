@@ -3,7 +3,7 @@ import type { PostModule } from '@/blog/types';
 export const meta = {
   title: 'Java — Write Once, Run Anywhere (and Everywhere)',
   slug: 'java-history-overview',
-  date: new Date().toISOString(),
+  date: "2025-08-28T10:45:00.000Z",
   excerpt: 'From Oak and set‑top boxes to the JVM that powers massive enterprise systems and modern Android apps.',
   tags: ['java', 'history'],
   persona: 'Java the Hut' as const,

@@ -3,7 +3,7 @@ import type { PostModule } from '@/blog/types';
 export const meta = {
   title: 'Rust — Why Safety and Speed Found Common Ground',
   slug: 'rust-history-overview',
-  date: new Date().toISOString(),
+  date: "2025-08-25T15:10:00.000Z",
   excerpt: 'From a side project at Mozilla to a modern systems language with fearless concurrency and a friendly compiler.',
   tags: ['rust', 'history'],
   persona: 'Ferris Rustman' as const,

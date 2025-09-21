@@ -3,7 +3,7 @@ import type { PostModule } from '@/blog/types';
 export const meta = {
   title: 'Python — A Short History and Why It Stuck',
   slug: 'python-history-overview',
-  date: new Date().toISOString(),
+  date: "2025-08-15T10:00:00.000Z",
   excerpt: 'From ABC to the web to data science — a calm, readable arc.',
   tags: ['python', 'history'],
   persona: 'Monty Python' as const,

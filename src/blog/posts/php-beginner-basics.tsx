@@ -3,7 +3,7 @@ import type { PostModule } from '@/blog/types';
 export const meta = {
   title: 'PHP #1 — A Gentle First Script',
   slug: 'php-beginner-basics',
-  date: new Date().toISOString(),
+  date: "2025-08-23T13:20:00.000Z",
   excerpt: 'Spin up a tiny PHP script and print something real.',
   tags: ['php', 'beginners', 'basics'],
   persona: 'Hypertext Harry' as const,

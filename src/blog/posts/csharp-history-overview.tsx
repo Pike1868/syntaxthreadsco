@@ -3,7 +3,7 @@ import type { PostModule } from '@/blog/types';
 export const meta = {
   title: 'C# — Modern .NET from Windows Roots to Cross‑Platform',
   slug: 'csharp-history-overview',
-  date: new Date().toISOString(),
+  date: "2025-08-30T12:00:00.000Z",
   excerpt: 'From .NET’s early days to open‑source, cross‑platform tooling and a language that kept getting nicer to write.',
   tags: ['csharp', 'history'],
   persona: 'Dotnet Dave' as const,

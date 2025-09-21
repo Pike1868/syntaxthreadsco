@@ -3,7 +3,7 @@ import type { PostModule } from '@/blog/types';
 export const meta = {
   title: 'PHP — From Personal Home Page to Modern Web Workhorse',
   slug: 'php-history-overview',
-  date: new Date().toISOString(),
+  date: "2025-08-22T09:30:00.000Z",
   excerpt: 'Born as a simple tool by Rasmus Lerdorf, PHP grew into a pragmatic, widely deployed server-side language.',
   tags: ['php', 'history'],
   persona: 'Hypertext Harry' as const,

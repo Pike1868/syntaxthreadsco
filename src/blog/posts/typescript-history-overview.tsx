@@ -3,7 +3,7 @@ import type { PostModule } from '@/blog/types';
 export const meta = {
   title: 'TypeScript — Why It Was Created and How It Won',
   slug: 'typescript-history-overview',
-  date: new Date().toISOString(),
+  date: "2025-08-18T11:15:00.000Z",
   excerpt: 'From JavaScript-at-scale headaches to a typed superset that reshaped front-end and Node tooling.',
   tags: ['typescript', 'history'],
   persona: 'Typey Tim' as const,

@@ -3,7 +3,7 @@ import type { PostModule } from '@/blog/types';
 export const meta = {
   title: 'Python #1 — Variables, Types, and a Calm Start',
   slug: 'python-beginner-variables',
-  date: new Date().toISOString(),
+  date: "2025-08-16T14:30:00.000Z",
   excerpt: 'A friendly intro to names, numbers, and strings — with zero drama.',
   tags: ['python', 'beginners', 'variables', 'types'],
   persona: 'Monty Python' as const,
