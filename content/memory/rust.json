@@ -1,3 +1,16 @@
 {
-  "recent": []
+  "recent": [
+    {
+      "title": "Why Rust? A Tale of Safety and Performance",
+      "excerpt": "Let's explore how Rust emerged as Mozilla's answer to memory safety challenges, and why its unique approach to systems programming continues to gain traction among developers who demand both safety and performance.",
+      "slug": "2025-09-21-why-rust-a-tale-of-safety-and-performance",
+      "tags": [
+        "rust",
+        "programming-languages",
+        "systems-programming",
+        "memory-safety",
+        "performance"
+      ]
+    }
+  ]
 }

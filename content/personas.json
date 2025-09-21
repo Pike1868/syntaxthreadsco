@@ -7,7 +7,7 @@
     "Java the Hut",
     "Dotnet Dave"
   ],
-  "cursor": 3,
+  "cursor": 4,
   "personas": {
     "Monty Python": {
       "key": "python",
@@ -147,7 +147,7 @@
           "hint": "Small CLI demo; ergonomics and safety."
         }
       ],
-      "cursor": 0
+      "cursor": 1
     },
     "Java the Hut": {
       "key": "java",
