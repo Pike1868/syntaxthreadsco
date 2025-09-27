@@ -74,7 +74,7 @@ function ProductCard({ product }: { product: import('@/types/product').Product }
   
   // Get all images for this product based on collection
   const productImages = getProductImages(product, collection);
-  const validImages = productImages.length > 0 ? productImages : [getPlaceholderImage()];
+  const validImages = productImages.length > 0 ? productImages : [getPlaceholderImage(collection)];
   
   // Auto-rotate images every 5 seconds if there are multiple images
   useEffect(() => {

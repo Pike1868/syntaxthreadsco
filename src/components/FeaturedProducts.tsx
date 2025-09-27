@@ -116,7 +116,7 @@ function FeaturedProductCard({
   
   // Get all images for this product based on collection
   const productImages = getProductImages(product, collection);
-  const validImages = productImages.length > 0 ? productImages : [getPlaceholderImage()];
+  const validImages = productImages.length > 0 ? productImages : [getPlaceholderImage(collection)];
   
   // Use shared image index, but stay within bounds of this product's images
   const currentImageIndex = sharedImageIndex % validImages.length;

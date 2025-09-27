@@ -26,6 +26,28 @@ const COLLECTIONS = {
   },
 } as const;
 
+const normalizeImagePath = (path: string): string => {
+  if (!path) return '';
+  const trimmed = path.trim();
+  if (!trimmed) return '';
+  return trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
+};
+
+const dedupeByFileName = (paths: string[]): string[] => {
+  const seen = new Set<string>();
+  const unique: string[] = [];
+  for (const rawPath of paths) {
+    const normalized = normalizeImagePath(rawPath);
+    if (!normalized) continue;
+    const filename = normalized.split('/').pop();
+    if (!filename) continue;
+    if (seen.has(filename)) continue;
+    seen.add(filename);
+    unique.push(normalized);
+  }
+  return unique;
+};
+
 const getProductImagePaths = (product: Product, imageType: 'gallery' | 'thumbnails', collection: keyof typeof COLLECTIONS = 'warrior-series') => {
   const { language, fit } = product;
   const lang = language.toLowerCase().replace('#', 'sharp');
@@ -49,13 +71,14 @@ const getProductImagePaths = (product: Product, imageType: 'gallery' | 'thumbnai
   const productImages = specificFiles.map((file) => `${specificPath}/${file}`);
   const genericImages = genericFiles.map((file) => `${genericPath}/${file}`);
 
-  // Deduplicate to avoid repeated files in UI carousels
   const all = [...productImages, ...genericImages];
-  const unique = Array.from(new Set(all));
-  return unique;
+  return dedupeByFileName(all);
 };
 
 export const getProductImages = (product: Product, collection: keyof typeof COLLECTIONS = 'warrior-series'): string[] => {
+  if (Array.isArray(product.images) && product.images.length > 0) {
+    return dedupeByFileName(product.images);
+  }
   return getProductImagePaths(product, 'gallery', collection);
 };
 
@@ -85,7 +108,10 @@ export const getBackDesignImages = (): string[] => {
   ];
 };
 
-export const getPlaceholderImage = (): string => {
+export const getPlaceholderImage = (collection: keyof typeof COLLECTIONS = 'warrior-series'): string => {
+  if (collection === 'hexcode-series') {
+    return '/images/products/hexcode-series/generic/gallery/front--black.webp';
+  }
   return '/images/products/warrior-series/classic/generic/gallery/front-generic-black.webp';
 };
 

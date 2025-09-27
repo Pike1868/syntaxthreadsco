@@ -45,8 +45,8 @@ export default function SingleProduct() {
   const { title, language, fit, basePrice, currency, etsyUrl } = product;
 
   // Get product images
-  const productImages = getProductImages(product);
-  const imagesToShow = productImages.length > 0 ? productImages : [getPlaceholderImage()];
+  const productImages = getProductImages(product, product.collection);
+  const imagesToShow = productImages.length > 0 ? productImages : [getPlaceholderImage(product.collection)];
 
   const handleBuyOnEtsy = () => {
     window.open(etsyUrl, '_blank', 'noopener,noreferrer');
