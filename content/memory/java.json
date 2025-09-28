@@ -1,3 +1,16 @@
 {
-  "recent": []
+  "recent": [
+    {
+      "title": "From Oak to Java: How a Coffee-Fueled Language Changed Computing",
+      "excerpt": "Journey back to the early '90s to discover how Java evolved from a language for TV remote controls into one of computing's most influential platforms. A story of pragmatic decisions, write-once-run-anywhere dreams, and yes, lots of coffee.",
+      "slug": "2025-09-28-from-oak-to-java-how-a-coffee-fueled-language-changed-computing",
+      "tags": [
+        "java",
+        "programming history",
+        "jvm",
+        "software engineering",
+        "oak programming"
+      ]
+    }
+  ]
 }
