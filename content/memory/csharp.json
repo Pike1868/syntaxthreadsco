@@ -1,3 +1,15 @@
 {
-  "recent": []
+  "recent": [
+    {
+      "title": "From C++ to Cross-Platform: The Fascinating Evolution of C# and .NET",
+      "excerpt": "Ever wonder why C# feels so polished right out of the gate? Let's explore how Anders Hejlsberg's experience with Delphi and TypeScript shaped C#'s DNA, and how .NET evolved from Windows-only to truly cross-platform.",
+      "slug": "2025-09-28-from-c-to-cross-platform-the-fascinating-evolution-of-c-and-net",
+      "tags": [
+        "dotnet",
+        "csharp",
+        "programming-history",
+        "cross-platform"
+      ]
+    }
+  ]
 }
