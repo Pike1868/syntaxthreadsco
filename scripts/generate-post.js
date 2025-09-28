@@ -164,12 +164,12 @@ Use these exact keys:
   // Ensure at least one credible reference (allowlist by persona)
   function hostname(u){ try { return new URL(u).hostname; } catch { return ''; } }
   const DOMAIN_ALLOWLIST = {
-    'Monty Python': ['python.org', 'docs.python.org', 'peps.python.org'],
-    'Typey Tim': ['typescriptlang.org', 'www.typescriptlang.org', 'tc39.es', 'nodejs.org'],
-    'Hypertext Harry': ['php.net', 'www.php.net'],
-    'Ferris Rustman': ['rust-lang.org', 'doc.rust-lang.org'],
-    'Java the Hut': ['docs.oracle.com', 'openjdk.org'],
-    'Dotnet Dave': ['learn.microsoft.com', 'docs.microsoft.com', 'dotnet.microsoft.com'],
+    'Monty Python': ['python.org', 'docs.python.org', 'peps.python.org', 'realpython.com', 'talkpython.fm', 'flask.palletsprojects.com'],
+    'Typey Tim': ['typescriptlang.org', 'www.typescriptlang.org', 'tc39.es', 'nodejs.org', 'react.dev', 'vitejs.dev', 'eslint.org'],
+    'Hypertext Harry': ['php.net', 'www.php.net', 'laravel.com', 'symfony.com', 'phptherightway.com'],
+    'Ferris Rustman': ['rust-lang.org', 'doc.rust-lang.org', 'crates.io', 'tokio.rs', 'serde.rs'],
+    'Java the Hut': ['docs.oracle.com', 'openjdk.org', 'www.java.com', 'spring.io', 'maven.apache.org', 'gradle.org'],
+    'Dotnet Dave': ['learn.microsoft.com', 'docs.microsoft.com', 'dotnet.microsoft.com', 'nuget.org', 'efcore.org', 'asp.net'],
   };
   const allowed = DOMAIN_ALLOWLIST[personaName] || [];
   const hasCredible = references.some(r => allowed.some(domain => hostname(r.url).endsWith(domain)));
