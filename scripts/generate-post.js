@@ -168,7 +168,7 @@ Use these exact keys:
     'Typey Tim': ['typescriptlang.org', 'www.typescriptlang.org', 'tc39.es', 'nodejs.org', 'react.dev', 'vitejs.dev', 'eslint.org'],
     'Hypertext Harry': ['php.net', 'www.php.net', 'laravel.com', 'symfony.com', 'phptherightway.com'],
     'Ferris Rustman': ['rust-lang.org', 'doc.rust-lang.org', 'crates.io', 'tokio.rs', 'serde.rs'],
-    'Java the Hut': ['docs.oracle.com', 'openjdk.org', 'www.java.com', 'spring.io', 'maven.apache.org', 'gradle.org'],
+    'Java the Hut': ['docs.oracle.com', 'oracle.com', 'www.oracle.com', 'openjdk.org', 'www.java.com', 'spring.io', 'maven.apache.org', 'gradle.org'],
     'Dotnet Dave': ['learn.microsoft.com', 'docs.microsoft.com', 'dotnet.microsoft.com', 'nuget.org', 'efcore.org', 'asp.net'],
   };
   const allowed = DOMAIN_ALLOWLIST[personaName] || [];
