@@ -10,6 +10,18 @@
         "language design",
         "software philosophy"
       ]
+    },
+    {
+      "title": "And Now for Something Completely Variable: Python's Naming Conventions",
+      "excerpt": "A practical guide to Python variable naming that won't have you pining for the fjords. Learn how clear naming and f-strings can make your code more readable than a Norwegian Blue parrot.",
+      "slug": "2025-10-04-and-now-for-something-completely-variable-pythons-naming-conventions",
+      "tags": [
+        "python",
+        "programming",
+        "variables",
+        "naming-conventions",
+        "best-practices"
+      ]
     }
   ]
 }
