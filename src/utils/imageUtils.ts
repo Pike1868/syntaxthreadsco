@@ -39,7 +39,7 @@ const dedupeByFileName = (paths: string[]): string[] => {
   for (const rawPath of paths) {
     const normalized = normalizeImagePath(rawPath);
     if (!normalized) continue;
-    const filename = normalized.split('/').pop();
+    const filename = normalized.split('/').pop()?.split(/[?#]/)[0];
     if (!filename) continue;
     if (seen.has(filename)) continue;
     seen.add(filename);
