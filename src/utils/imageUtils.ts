@@ -11,7 +11,7 @@ const COLLECTIONS = {
     },
     genericImageFiles: {
       classic: ['back-shirt-only-black.webp', 'back-person-1-black.webp', 'back-person-2-black.webp'],
-      premium: ['front-generic-black.webp', 'front-person-black.webp', 'front-person-generic-closeup-black.webp'],
+      premium: ['front-generic-black.webp', 'front-person-generic-closeup-black.webp'],
     },
   },
   'hexcode-series': {
