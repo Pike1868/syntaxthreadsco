@@ -7,7 +7,7 @@
     "Java the Hut",
     "Dotnet Dave"
   ],
-  "cursor": 6,
+  "cursor": 1,
   "personas": {
     "Monty Python": {
       "key": "python",
@@ -42,7 +42,7 @@
           "hint": "Tiny app, routing, templates; when to pick Flask."
         }
       ],
-      "cursor": 1
+      "cursor": 2
     },
     "Typey Tim": {
       "key": "typescript",
