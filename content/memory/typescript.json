@@ -10,6 +10,18 @@
         "software-engineering",
         "web-development"
       ]
+    },
+    {
+      "title": "TypeScript's Everyday Types: Your Building Blocks for Type-Safe Code",
+      "excerpt": "A practical guide to TypeScript's fundamental types, from primitives to objects, and how they form the foundation of type-safe development. Learn how to leverage these building blocks for more maintainable code.",
+      "slug": "2025-10-05-typescripts-everyday-types-your-building-blocks-for-type-safe-code",
+      "tags": [
+        "typescript",
+        "javascript",
+        "types",
+        "programming",
+        "web development"
+      ]
     }
   ]
 }
