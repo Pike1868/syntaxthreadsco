@@ -7,7 +7,7 @@
     "Java the Hut",
     "Dotnet Dave"
   ],
-  "cursor": 2,
+  "cursor": 3,
   "personas": {
     "Monty Python": {
       "key": "python",
@@ -112,7 +112,7 @@
           "hint": "routes, controllers, blade; where it shines."
         }
       ],
-      "cursor": 1
+      "cursor": 2
     },
     "Ferris Rustman": {
       "key": "rust",

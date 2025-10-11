@@ -10,6 +10,17 @@
         "programming history",
         "php8"
       ]
+    },
+    {
+      "title": "Getting Started with PHP: Your First Script",
+      "excerpt": "Ready to write your first PHP script? Let's build on what we learned about PHP's evolution and dive into the practical basics - from setting up a simple script to understanding how variables work.",
+      "slug": "2025-10-11-getting-started-with-php-your-first-script",
+      "tags": [
+        "php",
+        "beginners",
+        "web-development",
+        "tutorial"
+      ]
     }
   ]
 }
