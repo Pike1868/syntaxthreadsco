@@ -10,6 +10,17 @@
         "programming history",
         "php8"
       ]
+    },
+    {
+      "title": "PHP Basics: Your First Script and String Magic",
+      "excerpt": "Ready to write your first PHP script? Let's explore the fundamentals of variables, strings, and output - the building blocks that power millions of web pages.",
+      "slug": "2025-10-18-php-basics-your-first-script-and-string-magic",
+      "tags": [
+        "php",
+        "beginners",
+        "web-development",
+        "tutorial"
+      ]
     }
   ]
 }
