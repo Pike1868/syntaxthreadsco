@@ -11,6 +11,18 @@
         "memory-safety",
         "performance"
       ]
+    },
+    {
+      "title": "Ownership in Rust: A Friendly Chat About Memory Management",
+      "excerpt": "Let's demystify Rust's ownership system with a gentle introduction to one of its core features. Understanding ownership helps us write safer code without sacrificing performance.",
+      "slug": "2025-10-19-ownership-in-rust-a-friendly-chat-about-memory-management",
+      "tags": [
+        "rust",
+        "programming",
+        "memory-management",
+        "ownership",
+        "beginners"
+      ]
     }
   ]
 }

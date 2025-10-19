@@ -7,16 +7,17 @@ import p5 from '@/blog/posts/2025-09-28-from-oak-to-java-how-a-coffee-fueled-lan
 import p6 from '@/blog/posts/2025-10-04-and-now-for-something-completely-variable-pythons-naming-conventions.tsx';
 import p7 from '@/blog/posts/2025-10-05-typescripts-everyday-types-your-building-blocks-for-type-safe-code.tsx';
 import p8 from '@/blog/posts/2025-10-18-php-basics-your-first-script-and-string-magic.tsx';
-import p9 from '@/blog/posts/csharp-history-overview.tsx';
-import p10 from '@/blog/posts/java-history-overview.tsx';
-import p11 from '@/blog/posts/php-beginner-basics.tsx';
-import p12 from '@/blog/posts/php-history-overview.tsx';
-import p13 from '@/blog/posts/python-beginner-variables.tsx';
-import p14 from '@/blog/posts/python-history-overview.tsx';
-import p15 from '@/blog/posts/rust-history-overview.tsx';
-import p16 from '@/blog/posts/typescript-beginner-types.tsx';
-import p17 from '@/blog/posts/typescript-history-overview.tsx';
+import p9 from '@/blog/posts/2025-10-19-ownership-in-rust-a-friendly-chat-about-memory-management.tsx';
+import p10 from '@/blog/posts/csharp-history-overview.tsx';
+import p11 from '@/blog/posts/java-history-overview.tsx';
+import p12 from '@/blog/posts/php-beginner-basics.tsx';
+import p13 from '@/blog/posts/php-history-overview.tsx';
+import p14 from '@/blog/posts/python-beginner-variables.tsx';
+import p15 from '@/blog/posts/python-history-overview.tsx';
+import p16 from '@/blog/posts/rust-history-overview.tsx';
+import p17 from '@/blog/posts/typescript-beginner-types.tsx';
+import p18 from '@/blog/posts/typescript-history-overview.tsx';
 
-export const posts = [p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17];
+export const posts = [p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18];
 
 export const postsBySlug = new Map(posts.map(p => [p.meta.slug, p]));
