@@ -11,6 +11,18 @@
         "software engineering",
         "oak programming"
       ]
+    },
+    {
+      "title": "Records and Classes in Modern Java: A Tale of Two Objects",
+      "excerpt": "Let's explore how modern Java handles data representation through traditional classes and the newer record type - and why immutability might be your new best friend.",
+      "slug": "2025-10-25-records-and-classes-in-modern-java-a-tale-of-two-objects",
+      "tags": [
+        "java",
+        "oop",
+        "records",
+        "immutability",
+        "classes"
+      ]
     }
   ]
 }
