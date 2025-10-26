@@ -10,6 +10,18 @@
         "programming-history",
         "cross-platform"
       ]
+    },
+    {
+      "title": "C# Records: When Classes Meet Functional Programming",
+      "excerpt": "Records in C# bring the best of object-oriented and functional worlds together. Let's explore how they make data modeling both cleaner and safer.",
+      "slug": "2025-10-26-c-records-when-classes-meet-functional-programming",
+      "tags": [
+        "csharp",
+        "dotnet",
+        "records",
+        "functional-programming",
+        "data-modeling"
+      ]
     }
   ]
 }
