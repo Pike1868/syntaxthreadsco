@@ -7,7 +7,7 @@
     "Java the Hut",
     "Dotnet Dave"
   ],
-  "cursor": 4,
+  "cursor": 5,
   "personas": {
     "Monty Python": {
       "key": "python",
@@ -182,7 +182,7 @@
           "hint": "REST controller; configuration minimalism."
         }
       ],
-      "cursor": 1
+      "cursor": 2
     },
     "Dotnet Dave": {
       "key": "csharp",
