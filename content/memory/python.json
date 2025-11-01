@@ -22,6 +22,18 @@
         "naming-conventions",
         "best-practices"
       ]
+    },
+    {
+      "title": "Python Control Flow: And Now for Something Completely Logical",
+      "excerpt": "A practical guide to Python's control flow statements and functions, with a dash of Monty Python wisdom. Learn how to structure your code's decision-making without getting caught in the dreaded Infinite Loop of Caerbannog.",
+      "slug": "2025-11-01-python-control-flow-and-now-for-something-completely-logical",
+      "tags": [
+        "python",
+        "programming",
+        "control flow",
+        "functions",
+        "beginners"
+      ]
     }
   ]
 }
