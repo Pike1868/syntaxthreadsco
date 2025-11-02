@@ -22,6 +22,18 @@
         "programming",
         "web development"
       ]
+    },
+    {
+      "title": "Function Types & Type Narrowing: Writing More Precise TypeScript",
+      "excerpt": "Learn how TypeScript's type narrowing capabilities and function type guards help you write more precise, type-safe code. We'll explore how to leverage control flow analysis for better error handling and cleaner interfaces.",
+      "slug": "2025-11-02-function-types-type-narrowing-writing-more-precise-typescript",
+      "tags": [
+        "typescript",
+        "type-narrowing",
+        "functions",
+        "type-safety",
+        "development"
+      ]
     }
   ]
 }
