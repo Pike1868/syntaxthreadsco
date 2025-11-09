@@ -21,6 +21,18 @@
         "web-development",
         "tutorial"
       ]
+    },
+    {
+      "title": "PHP Arrays: Your Swiss Army Knife for Data Wrangling",
+      "excerpt": "Arrays in PHP are more versatile than you might think. Let's explore how they can handle both simple lists and complex data structures, making them your go-to tool for data management.",
+      "slug": "2025-11-09-php-arrays-your-swiss-army-knife-for-data-wrangling",
+      "tags": [
+        "php",
+        "arrays",
+        "programming",
+        "web development",
+        "data structures"
+      ]
     }
   ]
 }
