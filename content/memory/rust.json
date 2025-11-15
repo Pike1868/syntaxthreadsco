@@ -23,6 +23,18 @@
         "ownership",
         "beginners"
       ]
+    },
+    {
+      "title": "Pattern Matching in Rust: Making Sense of Your Data's Shape",
+      "excerpt": "Let's explore how Rust's pattern matching helps us handle different data shapes with confidence and compile-time safety. From simple enums to complex matches, we'll see how the compiler becomes our helpful assistant.",
+      "slug": "2025-11-15-pattern-matching-in-rust-making-sense-of-your-datas-shape",
+      "tags": [
+        "rust",
+        "programming",
+        "pattern-matching",
+        "enums",
+        "type-safety"
+      ]
     }
   ]
 }
