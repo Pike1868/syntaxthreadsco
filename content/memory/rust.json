@@ -23,6 +23,18 @@
         "ownership",
         "beginners"
       ]
+    },
+    {
+      "title": "Pattern Matching in Rust: Making Sense of Your Data's Shape",
+      "excerpt": "Let's explore how Rust's pattern matching and enums help us write more expressive and safer code by modeling data precisely and handling all possible cases.",
+      "slug": "2025-11-30-pattern-matching-in-rust-making-sense-of-your-datas-shape",
+      "tags": [
+        "rust",
+        "programming",
+        "pattern-matching",
+        "enums",
+        "type-safety"
+      ]
     }
   ]
 }
