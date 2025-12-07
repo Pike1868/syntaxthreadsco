@@ -23,6 +23,18 @@
         "ownership",
         "beginners"
       ]
+    },
+    {
+      "title": "Pattern Matching in Rust: When Enums Meet Their Match",
+      "excerpt": "Let's explore how Rust's enum types and pattern matching create expressive, type-safe code that catches errors at compile time. It's like having a very pedantic but helpful friend checking your work.",
+      "slug": "2025-12-06-pattern-matching-in-rust-when-enums-meet-their-match",
+      "tags": [
+        "rust",
+        "programming",
+        "enums",
+        "pattern-matching",
+        "type-safety"
+      ]
     }
   ]
 }
