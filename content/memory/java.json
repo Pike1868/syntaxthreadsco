@@ -23,6 +23,18 @@
         "immutability",
         "classes"
       ]
+    },
+    {
+      "title": "Java Collections & Streams: Your Guide to Better Data Flow",
+      "excerpt": "Ready to level up your Java data handling? Let's explore how Collections and Streams work together to make your code more expressive and efficient. Perfect for developers looking to move beyond basic loops.",
+      "slug": "2025-12-14-java-collections-streams-your-guide-to-better-data-flow",
+      "tags": [
+        "java",
+        "collections",
+        "streams",
+        "programming",
+        "tutorial"
+      ]
     }
   ]
 }
