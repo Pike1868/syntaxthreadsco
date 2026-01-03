@@ -7,7 +7,7 @@
     "Java the Hut",
     "Dotnet Dave"
   ],
-  "cursor": 5,
+  "cursor": 6,
   "personas": {
     "Monty Python": {
       "key": "python",
@@ -217,7 +217,7 @@
           "hint": "Hello REST with minimal ceremony."
         }
       ],
-      "cursor": 2
+      "cursor": 3
     }
   }
 }
