@@ -22,6 +22,18 @@
         "functional-programming",
         "data-modeling"
       ]
+    },
+    {
+      "title": "Async/Await in C#: Making Concurrent Code Feel Natural",
+      "excerpt": "Ready to level up your C# skills? Let's explore how async/await transforms complex concurrent operations into readable, maintainable code that feels almost synchronous.",
+      "slug": "2026-01-11-asyncawait-in-c-making-concurrent-code-feel-natural",
+      "tags": [
+        "csharp",
+        "dotnet",
+        "async",
+        "concurrency",
+        "programming"
+      ]
     }
   ]
 }
