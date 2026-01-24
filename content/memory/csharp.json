@@ -22,6 +22,18 @@
         "functional-programming",
         "data-modeling"
       ]
+    },
+    {
+      "title": "Async/Await in C#: Making Concurrent Code Beautiful",
+      "excerpt": "Remember wrestling with callbacks and nested promises? C#'s async/await pattern turns complex asynchronous operations into readable, maintainable code. Let's explore how this elegant feature makes concurrent programming feel natural.",
+      "slug": "2026-01-24-asyncawait-in-c-making-concurrent-code-beautiful",
+      "tags": [
+        "csharp",
+        "dotnet",
+        "async",
+        "concurrency",
+        "programming"
+      ]
     }
   ]
 }
