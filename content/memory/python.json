@@ -1,17 +1,6 @@
 {
   "recent": [
     {
-      "title": "Python's Quest for the Holy Grail of Readability",
-      "excerpt": "A look at how Python's emphasis on readability emerged from its ABC language roots, and why 'beautiful is better than ugly' became a guiding principle of the language.",
-      "slug": "2025-09-13-pythons-quest-for-the-holy-grail-of-readability",
-      "tags": [
-        "python",
-        "programming history",
-        "language design",
-        "software philosophy"
-      ]
-    },
-    {
       "title": "And Now for Something Completely Variable: Python's Naming Conventions",
       "excerpt": "A practical guide to Python variable naming that won't have you pining for the fjords. Learn how clear naming and f-strings can make your code more readable than a Norwegian Blue parrot.",
       "slug": "2025-10-04-and-now-for-something-completely-variable-pythons-naming-conventions",
@@ -33,6 +22,19 @@
         "control flow",
         "functions",
         "beginners"
+      ]
+    },
+    {
+      "title": "Yielding to Generators: A Pythonic Quest for Memory Efficiency",
+      "excerpt": "A practical guide to Python iterators and generators that won't have you yielding to confusion. Learn when to use these powerful tools for memory-efficient data handling, with a dash of Monty wisdom.",
+      "slug": "2026-03-28-yielding-to-generators-a-pythonic-quest-for-memory-efficiency",
+      "tags": [
+        "python",
+        "programming",
+        "iterators",
+        "generators",
+        "yield",
+        "tutorial"
       ]
     }
   ]
