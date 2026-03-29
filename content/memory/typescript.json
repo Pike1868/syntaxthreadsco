@@ -1,17 +1,6 @@
 {
   "recent": [
     {
-      "title": "Why TypeScript? A Brief History of Scaling JavaScript",
-      "excerpt": "JavaScript wasn't built for large-scale applications. Here's how TypeScript emerged to help teams write more maintainable code through static typing, and why it matters for modern development.",
-      "slug": "2025-09-14-why-typescript-a-brief-history-of-scaling-javascript",
-      "tags": [
-        "typescript",
-        "javascript",
-        "software-engineering",
-        "web-development"
-      ]
-    },
-    {
       "title": "TypeScript's Everyday Types: Your Building Blocks for Type-Safe Code",
       "excerpt": "A practical guide to TypeScript's fundamental types, from primitives to objects, and how they form the foundation of type-safe development. Learn how to leverage these building blocks for more maintainable code.",
       "slug": "2025-10-05-typescripts-everyday-types-your-building-blocks-for-type-safe-code",
@@ -33,6 +22,18 @@
         "functions",
         "type-safety",
         "development"
+      ]
+    },
+    {
+      "title": "Mastering TypeScript Generics: From Basic Constraints to Design Patterns",
+      "excerpt": "Learn how to write flexible, reusable TypeScript code with generics. We'll explore type constraints, default type parameters, and practical patterns that make generic types both powerful and maintainable.",
+      "slug": "2026-03-29-mastering-typescript-generics-from-basic-constraints-to-design-patterns",
+      "tags": [
+        "typescript",
+        "generics",
+        "type-safety",
+        "software-design",
+        "advanced"
       ]
     }
   ]
